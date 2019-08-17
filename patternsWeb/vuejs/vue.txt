@@ -1,0 +1,12 @@
+/*
+<div id="app">
+  <h1>{{ product }}</h1>
+</div>
+*/
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    product: 'Socks'
+  }
+})
