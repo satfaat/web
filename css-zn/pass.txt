@@ -1,0 +1,421 @@
+﻿$('.wrap').mousemove(function(e) {
+    var x = (e.pageX * -1 / 2), y = (e.pageY * -1 / 2);
+    $(this).css('background-position', x + 'px ' + y + 'px');
+});
+
+
+
+<div class="wrap">
+  <h2>Easy Peasy Parallax</h2>
+  <h4>Only 4 lines of jQuery</h4>
+</div>
+
+.wrap {
+  background: #fff url(http://i.imgur.com/NH1nLsV.png) repeat 0 0;
+  background-size: 500px;
+  color: #fff;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 600;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  text-shadow: 5px 5px black;
+  top: 0;
+  width: 100%;
+}
+
+h2 {
+  font-size: 4.5em;
+}
+
+h4 {
+  font-size: 3em;
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+window.requestAnimFrame = (function() {
+  return window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    function(callback) {
+      window.setTimeout(callback, 1000 / 60);
+    };
+})();
+var c = document.getElementById('canv');
+var $ = c.getContext('2d');
+var w = c.width = window.innerWidth;
+var h = c.height = window.innerHeight;
+var _w = w * 0.5;
+var _h = h * 0.5;
+var arr = [];
+var cnt = 0;
+
+window.addEventListener('load', resize);
+window.addEventListener('resize', resize, false);
+
+function resize() {
+  c.width = w = window.innerWidth;
+  c.height = h = window.innerHeight;
+  c.style.position = 'absolute';
+  c.style.left = (window.innerWidth - w) *
+    .01 + 'px';
+  c.style.top = (window.innerHeight - h) *
+    .01 + 'px';
+}
+
+function anim() {
+  cnt++;
+  if (cnt % 6) draw();
+  window.requestAnimFrame(anim);
+}
+anim();
+
+function draw() {
+
+  var splot = {
+    x: rng(_w - 900, _w + 900),
+    y: rng(_h - 900, _h + 900),
+    r: rng(20, 80),
+    spX: rng(-1, 1),
+    spY: rng(-1, 1)
+  };
+
+  arr.push(splot);
+  while (arr.length > 100) {
+    arr.shift();
+  }
+  $.clearRect(0, 0, w, h);
+
+  for (var i = 0; i < arr.length; i++) {
+
+    splot = arr[i];;
+    $.fillStyle = rndCol();
+    $.beginPath();
+    $.arc(splot.x, splot.y, splot.r, 0, Math.PI * 2, true);
+    $.shadowBlur = 80;
+    $.shadowOffsetX = 2;
+    $.shadowOffsetY = 2;
+    $.shadowColor = rndCol();
+    $.globalCompositeOperation = 'lighter';
+    $.fill();
+
+    splot.x = splot.x + splot.spX;
+    splot.y = splot.y + splot.spY;
+    splot.r = splot.r * 0.96;
+  }
+}
+
+function rndCol() {
+  var r = Math.floor(Math.random() * 180);
+  var g = Math.floor(Math.random() * 60);
+  var b = Math.floor(Math.random() * 100);
+  return "rgb(" + r + "," + g + "," + b + ")";
+}
+
+function rng(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
+body {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: hsla(0, 5%, 5%, 1);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(to right top, hsla(0, 5%, 15%, 0.5), hsla(0, 5%, 5%, 1));
+  background-image: -moz-linear-gradient(to right top, hsla(0, 5%, 15%, 0.5), hsla(0, 5%, 5%, 1));
+}
+p{
+  text-align:center;
+  width:100%;
+  color:hsla(0,50%,50%,1);
+  font-size:6em;
+  text-shadow:1px 1px hsla(0,0%,5%,1),
+          -1px -1px hsla(0,0%,5%,1);
+  font-family: 'Poiret One', cursive;
+  letter-spacing: 6px;
+  text-align: center;
+  position: relative;
+  margin-top: 40vh;
+}
+
+
+
+<canvas id="canv"></canvas>
+<p>Liquid Lights</p>
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+http://codepen.io/BrianDGLS/pen/yNBrgR
+
+
+            $(window).scroll(function() {
+              var wintop = $(window).scrollTop(),
+                docheight = $(document).height(),
+                winheight = $(window).height(),
+                scrolled = (wintop / (docheight - winheight)) * 100;
+
+              $('.scroll-line').css({
+                  'height': scrolled + '%',
+                  'width': scrolled + '%'
+              });
+            });
+
+<div class="scroll-container">
+  <div class="scroll-line"></div>
+</div>
+<div class="pound"><div/>
+<div class="main">
+  <div class="content">
+    <h1 class="headline">Scroll down to see <br>the article progress bar.</h1>
+    <p>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Aenean lacinia bibendum nulla sed consectetur.</p>
+    <h3>Tristique Aenean</h3>
+    <p>Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel
+      scelerisque nisl consectetur et.</p>
+    <p>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et
+      magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Sed
+      posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+    <p>Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <ul>
+      <li>Ullamcorper Aenean Ornare</li>
+      <li>Ridiculus Lorem Malesuada Consectetur</li>
+      <li>Aenean Tristique Sit Lorem Purus</li>
+      <li>Vehicula Egestas Mollis Cursus Nibh</li>
+    </ul>
+    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean
+      lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+    <h3>Dapibus Tristique</h3>
+    <p>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et
+      magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Sed
+      posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+    <p>Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <ul>
+      <li>Ullamcorper Aenean Ornare</li>
+      <li>Ridiculus Lorem Malesuada Consectetur</li>
+      <li>Aenean Tristique Sit Lorem Purus</li>
+      <li>Vehicula Egestas Mollis Cursus Nibh</li>
+    </ul>
+    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean
+      lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+    <h2>Vivamus lacus vel augue laoreet rutrum faucibus dolor auctor.</h2>
+    <p>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Aenean lacinia bibendum nulla sed consectetur.</p>
+    <h3>Tristique Cras</h3>
+    <p>Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel
+      scelerisque nisl consectetur et.</p>
+    <p>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et
+      magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Sed
+      posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+    <p>Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <ul>
+      <li>Ullamcorper Aenean Ornare</li>
+      <li>Ridiculus Lorem Malesuada Consectetur</li>
+      <li>Aenean Tristique Sit Lorem Purus</li>
+      <li>Vehicula Egestas Mollis Cursus Nibh</li>
+    </ul>
+    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean
+      lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+    <h3>Dapibus Tristique</h3>
+    <p>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et
+      magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Sed
+      posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+    <p>Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <ul>
+      <li>Ullamcorper Aenean Ornare</li>
+      <li>Ridiculus Lorem Malesuada Consectetur</li>
+      <li>Aenean Tristique Sit Lorem Purus</li>
+      <li>Vehicula Egestas Mollis Cursus Nibh</li>
+    </ul>
+    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean
+      lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+    <h3>Aenean Etiam Cras</h3>
+    <p>Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel
+      scelerisque nisl consectetur et.</p>
+    <p>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et
+      magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Sed
+      posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+    <p>Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <ul>
+      <li>Ullamcorper Aenean Ornare</li>
+      <li>Ridiculus Lorem Malesuada Consectetur</li>
+      <li>Aenean Tristique Sit Lorem Purus</li>
+      <li>Vehicula Egestas Mollis Cursus Nibh</li>
+    </ul>
+    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean
+      lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+    <h3>Bibendum Aeneane</h3>
+    <p>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et
+      magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Sed
+      posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+    <p>Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <ul>
+      <li>Ullamcorper Aenean Ornare</li>
+      <li>Ridiculus Lorem Malesuada Consectetur</li>
+      <li>Aenean Tristique Sit Lorem Purus</li>
+      <li>Vehicula Egestas Mollis Cursus Nibh</li>
+    </ul>
+    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean
+      lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+    <h2>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</h2>
+    <p>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Aenean lacinia bibendum nulla sed consectetur.</p>
+    <h3>Tristique Aenean</h3>
+    <p>Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel
+      scelerisque nisl consectetur et.</p>
+    <p>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et
+      magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Sed
+      posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+    <p>Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <ul>
+      <li>Ullamcorper Aenean Ornare</li>
+      <li>Ridiculus Lorem Malesuada Consectetur</li>
+      <li>Aenean Tristique Sit Lorem Purus</li>
+      <li>Vehicula Egestas Mollis Cursus Nibh</li>
+    </ul>
+    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean
+      lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+    <h3>Bibendum Aenean</h3>
+    <p>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et
+      magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Sed
+      posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+    <p>Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <ul>
+      <li>Ullamcorper Aenean Ornare</li>
+      <li>Ridiculus Lorem Malesuada Consectetur</li>
+      <li>Aenean Tristique Sit Lorem Purus</li>
+      <li>Vehicula Egestas Mollis Cursus Nibh</li>
+    </ul>
+    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean
+      lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+  </div>
+</div>
+
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:700|PT+Sans+Narrow:400|Changa+One);
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.content {
+  color: #555;
+  margin: 0 auto;
+  padding: 20vh 0;
+  text-align: justify;
+  width: 400px;
+}
+@media all and (max-width: 420px) {
+  .content {
+    width: 100%;
+  }
+}
+h3 {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 40px 0 0;
+  position: relative;
+  letter-spacing: 6px;
+}
+h3:before,
+h3:after {
+  content: " ";
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+h3:before {
+  margin: 7px 0 0 -60px;
+}
+h3:after {
+  margin: 7px 0 0 10px;
+}
+.headline {
+  font-family: 'Changa One', sans-serif;
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+p,
+ul {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-align: justify;
+}
+.scroll-container {
+  left: 10%;
+  height: 40vh;
+  position: fixed;
+  top: 20vh;
+  width: 2px;
+  z-index: 1;
+  overflow: hidden;
+}
+@media all and (max-width: 700px) {
+  .scroll-container {
+    width: 100%;
+    height: 10px;
+    left: 0;
+    top: 0;
+  }
+}
+.scroll-line {
+  background: #b55;
+  height: 0;
+  min-width: 2px;
+}
+@media all and (max-width: 700px) {
+  .scroll-line {
+    min-width: none;
+    height: 2px !important;
+  }
+}
+.pound:after {
+  content: '\266f';
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  position: fixed;
+  left: 9.5%;
+  bottom: 37vh;
+  z-index: 1;
+}
+@media all and (max-width: 700px) {
+  .pound:after {
+    display: none;
+  }
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

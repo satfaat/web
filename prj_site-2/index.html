@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+    <head>
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <meta charset="UTF-8">
+        <meta name="Keywords" content="">
+        <meta name="Description" content="">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+		<link href='http://fonts.googleapis.com/css?family=Neucha&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="lounge.css">
+<title>INDEX</title>
+
+	<!--<link rel="stylesheet/less" type="text/css" href="CSS/styles.less">-->
+	<!--<link href="http://fonts.googleapis.com/css?family=Gravitas+One" rel="stylesheet"/>-->
+	<STYLE>
+		body {
+			background-color: blue ;
+			<!--background-image: url("http://images2.layoutsparks.com/1/158320/star-sky-night-blue.jpg");-->
+		}
+		
+		#green, p {
+			color: green;
+        }
+		p.center {
+		text-align: center;
+		}
+	</STYLE>
+	
+		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+		<!--<script src="https://raw.github.com/less/less.js/master/dist/less-1.7.0.min.js"></script>-->
+		<!--<script language="javaScript" type="text/javascript">-->
+		<script src="js/collaps.js">	</script>
+		<script>
+            window.onload = function() {
+                alert("you rule!");
+            }
+        </script>
+		<script>
+			var pisateli=["Лев Толстой", 
+							"Николай Гоголь",
+							"Иван Тургенев",
+							"Антон Чехов"];
+							
+			var вопросы = [
+							['Сколько лун у планеты Земля?', 1],
+							['Сколько лун у планеты Сатурн?', 31],
+							['Сколько лун у планеты Венера?', 0]
+			];
+							
+			pisateli.unshift('Жюль Верн');
+			
+			var menuElement=new Array();
+			menuElement[0] = "Главная";
+			menuElement[1] = "Блог";
+			menuElement[2] = "Галерея";
+			menuElement[3] = "Юмор";
+			menuElement[4] = "Библиотека";
+			menuElement[5] = "Игры";
+			
+/*function showSubmenu(){
+$('#submenu').show();
+}
+
+function hideSubmenu()(
+	$('#submenu').hide();
+)
+				$('#fixedMenu').toggle(
+					function(){
+						$('#aside_menu').show();	
+					},//first click
+					function(){
+						$('#aside_menu').hide();	
+					}//second click
+				);
+*/
+		</script>
+	
+    </head>
+    
+<body>
+    <header>...</header>
+	
+    <script>
+			document.write('<p>Первый автор - <strong>');
+			document.write(pisateli[4]+'</strong></p>');
+			document.write('<p>Первый автор - <strong>');
+			document.write(pisateli[pisateli.length-1]+'</strong></p>');
+			
+			document.write('<p>Чуть не забыл, <strong>');
+			document.write(pisateli[0]);
+			document.write('</strong></p>');
+			//alert(typeof pisateli);
+			
+			document.write('<p>');
+			document.write(вопросы[0][0]);
+			document.write('</p>');
+			document.write('<p>');
+			document.write(вопросы[1][0]);
+			document.write('</p>');
+			document.write('<p>');
+			document.write(вопросы[2][0]);
+			document.write('</p>');
+			
+			
+			document.write('<p>');
+			document.write(вопросы[0][0]);
+			document.write('</p>');
+			document.write('<p>');
+			document.write(вопросы[0][1]);
+			document.write('</p>');
+			document.write('<p>');
+			document.write(вопросы[1][1]);
+			document.write('</p>');
+	</script>
+
+				<!--<section id="leftBar">
+								
+                    <h2>НАПИТКИ</h2>
+                        <p>Домашняя смесь, 10</p>
+                        <p>Домашняя смесь, 10</p>
+                        <p>Домашняя смесь, 10</p>
+                    <h2>ОСВЕЖАЮЩИЕ НАПИТКИ</h2>
+                        <p>Домашняя смесь, 10</p>
+                        <p>Домашняя смесь, 10</p>
+                        <p>Домашняя смесь, 10</p>
+                        <p>Домашняя смесь, 10</p>
+                        <p>Домашняя смесь, 10</p>
+                        <p>Домашняя смесь, 10</p>
+                </section><!--id="leftBar"-->
+	
+    <h1 align="center" id="green">
+It works!
+    </h1><br/>
+    
+    <p style="text-align:center;"><a href="CDT.php">Создать базу данных</a></p><br/>
+    <p class="center"><a href="LESSON/ctable.php">Создать таблицу</a></p><br/>
+    <p class="center"><a href="TST.php">ТЕСТ</a></p><br/>
+    <p class="center"><a href="LESSON/">Урок 1</a></p><br/>
+	
+	
+	<div id="fixedMenu" onclick="collapsElement();">
+                    <p>MENU</p>
+                    <div id="collapse" style="display:none">
+                        <ul class="nav">
+                            <li>
+								<a class="indexLink"	href="FIV_index.html">	Главная		</a>
+							</li>
+                            <li>
+								<a class="blogLink"	href="FIII_blog.html">		Блог		</a>
+							</li>
+                        </ul>
+                    </div>
+                </div>
+     
+</body>
+</html>

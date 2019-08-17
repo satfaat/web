@@ -1,0 +1,114 @@
+﻿body {
+	background-color:	silver;
+	font-family:	"Times New Roman", serif;
+	font-size:		medium;
+	margin:		0px;
+}
+#allcontent {
+	/*width:		800px;*/
+	padding-top:	5px;
+	padding-bottom:	5px;
+	/*background-color:	#675c47;*/
+	margin-left:	auto;
+	margin-right:	auto;
+}
+header.top {
+	background-color:	#675c47;
+	margin:		10px 10px 0px 10px;
+	height:		108px;
+}
+#tableContainer {
+	display: table;
+	border-spacing: 10px;
+}
+#tableRow {
+	display: table-row;
+}
+section#main, section#blog {
+	display:		table-cell;
+	background:	#efe5d0 top left;
+	font-size:		105%;
+	padding:		15px;
+	vertical-align:	top;
+}
+
+section#leftBar {
+	display:		table-cell;
+	background-color:	#efe5d0;
+	width:		20%
+	padding:		15px;
+	vertical-align:	top;}
+aside {
+	display:		table-cell;
+	background:	#efe5d0 bottom right;
+	font-size:		105%;
+	padding:		15px;
+	vertical-align:	top;
+}
+footer {
+	background-color:	#675c47;
+	color:		#efe5d0;
+	font-size:		90%;
+	text-align:	center;
+	padding:		15px;
+	margin:		0px 10px 10px 10px;
+}
+h1, h2 {
+	font-family:	"Courier New", Courier, monospace;
+	color:		#954b4b;
+	/*border-bottom:	thin dotted #888888;*/
+}
+h1 {
+	font-size: 150%;
+}
+h2 {
+	/*font-size:	1.2em;*/
+	font-size:		120%;
+	font-weight:	normal;
+}
+.slogan { color: #954b4b;}
+
+blockquote {font-style: italic;}
+#guarantee {
+	line-height: 1.9em;
+	font-style: italic;
+	color: #444444;	
+	border-color: white;
+	border-width: 1px;
+	border-style: dashed;
+	background-color: #a7cece;
+	padding: 25px;
+	padding-left: 80px;
+	margin: 30px;
+	margin-right: 250px;
+	background-image:		url (images/background.gif);
+	background-repeat: no-repeat;
+	background-position: top left;}
+.headingI {
+	text-align: center;
+	line-height: 1.8em;}
+
+a:link {
+	color: #b76666;
+	text-decoration: none;
+	border-bottom: thin dotted #b76666;
+}
+a:visited {
+	color: #675c47;
+	text-decoration: none;
+	border-bottom: thin dotted #675c47;}
+nav {
+	background-color:	#efe5d0;
+	margin:		10px 10px 0px 10px;}
+nav ul {
+	padding:		5px 0px 5px 0px;
+	margin:		0px;
+	list-style-type:	none;}
+nav ul li {
+	display:	inline;
+	padding:	5px 15px 5px 15px;}
+nav ul li a:link, nav ul li a:visited {
+	color:		#954b4b;
+	border-bottom:	none;
+	font-weight:	bold;}
+nav ul li.selected {background-color:	#c8b99c;}

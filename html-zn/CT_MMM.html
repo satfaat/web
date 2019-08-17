@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <meta charset="UTF-8">
+        <meta name="Keywords" content="">
+        <meta name="Description" content="">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+		<link href='http://fonts.googleapis.com/css?family=Neucha&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		
+        <link rel="stylesheet" href="CSS/style.css"/>
+
+<title>Кошка Масяня</title>
+
+        <script src="js/cookie.js">		</script>
+        <script src="js/menu_top.js">	</script>
+        <script src="js/collaps.js">	</script>
+        <script src="js/imgTalk.js">	</script>
+		<script src="js/fun.js">		</script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
+        
+<script>
+var счет = 0;
+var вопросы = [
+				['Сколько лун у планеты Земля?', 1],
+				['Сколько лун у планеты Сатурн?', 31],
+				['Сколько лун у планеты Венера?', 0]
+];
+
+function задавайВопрос(вопрос) {
+		var ответ = prompt(вопрос[0], '');
+		if (ответ == вопрос[1]) {
+			alert('Верно!');  
+			счет++;
+		} else {
+			alert('Неверно. Правильный ответ ' + вопрос[1]);
+		}
+}//end задавайВопрос(вопрос)
+
+for (var i=0; i<вопросы.length; i++) {
+	задавайВопрос(вопросы[i]);
+}
+</script>
+
+		<!--[if it IE9]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    </head>
+    
+<body onload="setMenu();">
+
+    <div id="content">
+        <header  class="top">
+            <h1>CАЙТ КОШКИ МАСЯНИ</h1>
+        </header>
+        
+        <nav>
+            <ul>
+                <li class="selected"><a href="FIV_index.html" id="element0"></a></li>
+                <li><a href="FIII_blog.html" id="element1"></a></li>
+                <li><a href="FIII.html" id="element2"></a>
+                    <ul>
+                        <li><a href="FIV_aphorism.html">Фото</a></li>
+                        <li><a href="FIV_aphorism.html">Рисунки</a></li>
+                    </ul>
+                </li>
+                <li><a href="FIII.html" id="element3"></a></li>
+                <li><a href="FIV_aphorism.html" id="element4"></a>
+                    <ul>
+                        <li><a href="FIV_aphorism.html">Афоризмы</a></li>
+                        <li><a href="FIV_aphorism.html">Афоризмы</a></li>
+                    </ul>
+                </li>
+                <li><a href="" id="element5"></a></li>
+            </ul>
+        </nav>
+        
+    <div id="tableContainer">
+                <div id="tableRow">
+                
+
+                
+				
+<section id="main">
+
+	<h1>Простая викторина</h1>
+		<script>
+			var сообщение = 'Вы ответили правильно на ' + счет;  
+			сообщение += ' из ' + вопросы.length;
+			сообщение += ' вопросов.';
+			document.write('<p>' + сообщение + '</p>');
+		</script>
+		
+</section><!--id="main"-->
+    
+        <aside>
+            <p class="headingI">
+            <img id="imgAsk" style="cursor:pointer" onclick="askName();" src="http://www.scorp12on.narod.ru/images/05.jpg" alt="кошка Масяня"/>
+            <br/>
+            <span class="slogan">
+                    Pulsate et aperietur vobis<br/>
+            </span>
+            </p>
+            <p>
+                Вы еще никогда не писали кошкам?<br/>
+                А зря...
+            </p>
+			
+<!--SCRIPT-->
+    <script>
+		sendEmail();
+	</script>
+	
+        </aside>
+        
+    </div> <!--tableRow-->
+</div> <!--tableContainer-->
+
+                <div id="fixedMenu" onclick="collapsElement();">
+                    <p>MENU</p>
+                    <div id="collapse" style="display:none">
+                        <ul class="nav">
+                            <li>
+								<a class="indexLink"	href="FIV_index.html">	Главная		</a>
+							</li>
+                            <li>
+								<a class="blogLink"	href="FIII_blog.html">		Блог		</a>
+							</li>
+                            <li>
+								<a class="homeLink"	href="FIII.html">			Фото		</a>
+							</li>
+                            <li>
+								<a class="homeLink"	href="FIII.html">			Рисунки		</a>
+							</li>
+                            <li>
+								<a class="homeLink"	href="FIII.html">			Юмор		</a>
+							</li>
+							<li>
+								<a class="homeLink"	href="FIV_aphorism.html">	Библиотека	</a>
+							</li>
+							<li>
+								<a class="homeLink"	href="FIV_MMM.html">		Игры		</a>
+							</li>
+                        </ul>
+                    </div>
+                </div>
+        <footer>
+            <address>
+				&copy; 2007-2014, Olga Gasiukevich
+			</address>
+        </footer>
+    </div> <!--content-->
+</body>
+</html>

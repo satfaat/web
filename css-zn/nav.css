@@ -1,0 +1,67 @@
+﻿nav.mainmenu{
+	position: absolute;
+	top: 40%;
+	left: 5%;
+	z-index: 5;
+}
+.mainmenu ul{
+	list-style-type: none;
+	padding-left:0;
+	margin-left:0;
+}
+ul.submenu{
+	display: none;
+	position: absolute; 
+    margin-top:-38px; 
+    left: 205px;
+}
+.mainmenu ul li:hover>ul {
+	display: table-row-group;
+}
+nav.mainmenu a{
+	display: block;
+	width: 205px;
+	height: 100%;
+	line-height: 1.5em;
+	text-transform: uppercase;
+	text-decoration: none;
+	background-color: #F7F7F7;
+	opacity: 0.7;
+    filter: Alpha(opacity=70); /* IE8 and earlier */
+	color: #777;
+	margin-bottom: 10px;
+	//padding:0 10px;
+	padding-left:20%;
+	font-size: 1.15em;
+	font-weight: bold;
+	//text-align: right;
+	letter-spacing:1px;
+	border-radius: 20px/10px;
+	border-left:5px solid transparent;
+	box-shadow: 8px 8px 4px rgba(0,0,0,.7);
+	text-shadow:2px 2px 2px #777;
+	-webkit-transition: background-color 1s; /* Safari */
+    -webkit-transition-timing-function: linear; /* Safari */
+    transition: background-color 1s;
+    transition-timing-function: linear;
+}
+nav.mainmenu a:hover{
+	border-left: 10px solid #CF0000;
+	border-top-left-radius:40px;
+	border-top-right-radius:0;
+	border-bottom-left-radius:0;
+	border-bottom-right-radius:40px;
+	color: white;
+	background-color: transparent;
+	opacity: 1;
+    filter: Alpha(opacity=100); /* IE8 and earlier */
+	/* Shadow*/
+    text-shadow: 4px 4px 8px #000, 0 0 5px #0000FF;
+	box-shadow:
+		0px 0px 0px rgba(000,000,000,0),
+		inset 0px 1px 0px rgba(255,255,255,0.7);
+	/* Rotate*/
+    -ms-transform: rotate(-5deg); /* IE 9 */
+    -webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
+    transform: rotate(-5deg);
+}

@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta http-equiv= "X-UA-Compatible" content="IE=edge">
+        <meta charset="UTF-8">
+        <meta name="Keywords" content="">
+        <meta name="Description" content="">
+        
+        <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="CSS/style.css"/>
+        <link rel="stylesheet" href="CSS/gallery.css"/>
+        <!--<link rel="stylesheet/less" type="text/css" href="CSS/styles.less">-->
+        <link href="http://fonts.googleapis.com/css?family=Gravitas+One" rel="stylesheet"/>
+
+<title>Слайд шоу</title>
+        <script src="js/menu_top.js"></script>
+        <script src="js/slide_show.js"></script>
+        <script src="js/animation.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
+        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+        <!--<script src="https://raw.github.com/less/less.js/master/dist/less-1.7.0.min.js"></script>-->
+<script type="text/javascript">
+
+</script>
+<!--[if it IE9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    </head>
+    
+<body>
+    <img ID="imageHolder" src="">
+    <p>
+        <a ID="first" href="#" onclick="goToFirst();">&lt;&lt;</a>
+        &nbsp;<a ID="previous" href="#" onclick="goToPrevious();">&lt;</a>
+        &nbsp;<a ID="next" href="#" onclick="goToNext();">&gt;</a>
+        &nbsp;<a ID="last" href="#" onclick="goToLust();">&gt;&gt;</a>
+    </p>
+    
+    <script type="text/javascript">
+        var images=new Array();
+        images[0]="images/1.jpg";
+        images[1]="images/2.jpg";
+        images[2]="images/3.jpg";
+        images[3]="images/4.jpg";
+        images[4]="images/5.jpg";
+        images[5]="images/6.jpg";
+        
+        var imageHolderObject=document.all["imageHolder"];
+        var firstObject=document.all["first"];
+        var previousObject=document.all["previous"];
+        var nextObject=document.all["next"];
+        var lastObject=document.all['last'];
+        goToFirst();
+    </script>
+    <img ID="imgI" src="images/1.jpg"/>
+    <p>
+        <a href="gallery.php">Gallery</a>
+    </p>
+    
+</body>
+</html>
