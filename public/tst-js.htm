@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="en"><head></head><body id="tst-js">
+
+<section class="content">
+
+    <!-- Data manipulation -->
+    <!-- Onclick -->
+<button onclick="function_1()">Try it</button>
+    <p id="test_1"></p>
+
+    <!-- Onsubmit -->
+<form name="form_1" action="/action_page.php" onsubmit="return validateForm_1()" method="post">
+    Name: <input type="text" name="fname">
+    <input type="submit" value="Submit">
+</form>
+
+<div class="container">
+    <form id="fenceSale" action="/action_page.php"><div class="row">
+    <!-- onsubmit="function_2()" -->
+    <!-- One "tab" for each step in the form: -->
+    <div class="tabFence">
+        <div class="col-25">
+            <label for="fenceLength">Длина забора: </label>
+        </div>
+
+        <div class="col-75">
+            <input type="number" name="fenceLength" placeholder="0" oninput="this.className = ''" min="1" required autofocus />
+            <p>document.forms["fenceSale"]["fenceLength"].value</p>
+        </div>
+
+        <div class="col-25">
+            <label for="fenceHeight">Высота забора: </label>
+        </div>
+        <div class="col-75">
+            <input type="number" name="fenceHeight" placeholder="0" oninput="this.className = ''" min="1" required/>
+        </div>
+
+        <div class="col-25">
+            <label for="material">Материал забора: </label>
+        </div>
+
+        <div class="col-75">
+            <select name="material" required>
+                <option value="makeAchoice" selected>Выберите материал</option>
+                <option value="decking">профнастил 400 ₽ за м²</option>
+                <option value="modules">модули 500 ₽ за м²</option>
+                <option value="concrete">бетон 700 ₽ за м²</option>
+                <option value="grid">сетка 200 ₽ за м²</option>
+            </select>
+            <input type="checkbox" name="installation" value="installation"> Нужен монтаж<br>
+        </div>
+           
+            <input type="submit" value="Submit" />
+            <!-- formtarget="_blank" -->
+    </div>
+
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+    </div>
+</div></form></div>
+
+<form id="form_2" action="/action_page.php">
+    <p>form_2</p>
+    Enter name: <input type="text" name="fname">
+    <input type="submit" value="Submit-v">
+</form>
+
+    <!-- TEST Vue -->
+<div id="msg"> {{ message }} </div>
+
+<div id="app-2">
+    <span v-bind:title="message">
+        Hover your mouse over me for a few seconds
+        to see my dynamically bound title!
+    </span>
+</div>
+</section>
+<script>
+/* <element onsubmit="myScript"> */
+    function function_1() {
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        var test_1 = document.getElementById("test_1");
+        test_1.innerHTML = fruits.join(" and ");
+    }
+
+/*object.onsubmit = function(){myScript};*/
+    function function_2() {
+        var height = document.forms["fenceSale"]["fenceHeight"].value;
+        var length = document.forms["fenceSale"]["fenceLength"].value;
+        var fenceResult = height + length;
+        alert("The form fenceSale was submitted Высота: " + height + "; Length: " + length);
+    } /*document.getElementById("fenceSale").onsubmit = function() {function_2()};*/
+        var fenceSale = document.getElementById('fenceSale');
+        fenceSale.onsubmit = function() {function_2()};
+
+/*Top Syntax*/ /*object.addEventListener("submit", myScript);*/
+        function function_3() {
+        alert("The form_2 was submitted");
+    } 
+        var form_2 = document.getElementById("form_2");
+        form_2.addEventListener("submit", function_3);
+
+    function validateForm_1() {
+        var form_1 = document.forms["form_1"]["fname"].value;
+        if (form_1 == "") {
+            //alert("Name must be filled out");
+            alert("Заполните поле");
+            return false;
+        }
+    }
+
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("#test1").text("Hello world!");
+        });
+        $("#btn2").click(function(){
+            $("#test2").html("<b>Hello world!</b>");
+        });
+        $("#btn3").click(function(){
+            $("#test3").val("Dolly Duck");
+        });
+    });
+</script>
+
+<footer id="htmFooter">
+    <script src="js/site.js"></script>
+</footer></body></html>
