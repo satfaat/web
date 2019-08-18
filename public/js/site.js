@@ -33,7 +33,3 @@ function addToFooter(linkjs){
 
 //w3.includeHTML();
 /* END OF INCLUDE */
-
-$(document).ready(function(){
-
-});
