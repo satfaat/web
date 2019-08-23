@@ -21,7 +21,7 @@
 /*a:hover {color: red;}/* mouse over link */
 /*a:active {color: #008CBA;}/* selected link */
 
-a:link, a:visited {
+.btn_lnk:link, .btn_lnk:visited {
   background-color: hsla(195, 100%, 40%, 0.6);
   color: white;
   padding: 14px 25px;
@@ -29,7 +29,7 @@ a:link, a:visited {
   text-decoration: none;
   display: inline-block;
 }
-a:hover, a:active {background-color: hsla(4, 90%, 58%, 0.6);}
+.btn_lnk:hover, .btn_lnk:active {background-color: hsla(4, 90%, 58%, 0.6);}
 
 .pagination a{
   text-decoration: none;

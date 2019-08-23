@@ -1,0 +1,84 @@
+table{
+  border-collapse: collapse;
+  width: 100%;
+  border-spacing: 0;
+  /*border: 1px solid #ddd;*/}
+th, td{
+  border-bottom: 1px solid #ddd;
+  /*border: none;*/
+  text-align: left;
+  padding: 8px;
+}
+th{
+  background-color: hsla(210, 100%, 20%, 0.4);
+/*#003366; rgba(0,51,102,0.4)*/
+  border-radius: 25px;}
+
+tr:nth-child(even){	background-color: hsla(240, 100%, 20%, 0.4);
+/*#f2f2f2; #000066; rgba(0,0,102,0.6)*/
+}
+
+td:hover/*, th:hover*/ {
+  background-color: rgba(255,255,255,0.6);
+	color: black;
+  border-radius: 25px;}
+
+.tresponsive{
+  /*overflow-x:auto;*/
+  width:90%;
+  margin:auto;
+}
+
+.figu_tbl {
+  /*display: inline-block;/*block*/
+  border: 1px solid #fff;
+  padding: 0 6px;
+  float: left;
+  width: 24,99999%;/*200px*/
+}
+/*.figu-tbl:hover {}*/
+.figu_tbl img{
+	width: 100%;/*300px*/
+	height: auto;/*100*/
+}
+/*figcaption see in img.css*/
+@media only screen and (max-width: 700px) {
+  .figu_tbl {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .figu_tbl /*responsive*/ {
+    width: 100%;
+  }
+}
+
+/*Link gallery*/
+.table-link_gallery{
+  table-layout: auto;
+  width: 100%;
+  /*border: 5px solid red;*/
+  border-collapse: separate;
+}
+.table-link_gallery tr td{
+  border: 5px solid red;
+  border-radius: 20px;
+}
+/* End of Link gallery*/
+
+/* GRID */
+.t_grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  /*background-color: #2196F3;*/
+  grid-gap: 10px;
+  padding: 5px;
+}
+.t_dt {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 8px;
+  font-size: 21px;
+  text-align: center;
+}/* END GRID */

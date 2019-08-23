@@ -1,0 +1,58 @@
+@import url("menuNlinks.css");
+@import url("table.css");
+@import url("form.css");
+@import url("img.css");
+@import url("txt.css");
+
+/*Responsive*/
+* {box-sizing:border-box;}
+
+.left, .right {
+    /*background-color:#2196F3;*/
+    padding:20px;
+    float: left;
+    width: 20%; /* The width is 20%, by default */}
+
+.main/*, .content*/ {
+    /*background-color:#f1f1f1;*/
+    padding:20px;
+    float: left;
+    width: 60%; /* The width is 60%, by default */}
+.right {
+    /*background-color:#4CAF50;*/
+    padding:20px;}
+
+/* Use Media Query to add a breakpoint at 800px: */
+@media screen and (max-width:800px) {
+    .left , .main, .right {width:100%;}
+}
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+}
+/*End of Responsive*/
+body{
+    background: hsla(247, 96%, 11%, 0.7) url("../../img/background/tree_4.jpg") no-repeat fixed center;
+    color: #beb8cc;
+    font-family: "Comic Sans MS", "Century Gothic", sans-serif;
+/*"Times New Roman", Times, Consolas, serif*/
+    font-size: 100%;
+    justify-content: center;}
+.content{
+    background-color: hsla(267, 94%, 12%, 0.6);
+/*rgba(28,2,60,0.6)*/
+    max-width: 960px;
+    margin: auto;
+    padding: 20px;}
+/*div {
+    width:300px;
+    margin: auto;
+    border: 1px solid red;}*/
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
