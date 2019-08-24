@@ -1,4 +1,4 @@
-@import url("menuNlink.css");
+@import url("menuNlinks.css");
 @import url("table.css");
 @import url("form.css");
 @import url("img.css");
@@ -7,15 +7,19 @@
 /*Responsive*/
 * {box-sizing:border-box;}
 
+[class*="col-"] {
+    float: left;
+    padding: 13px;}
+
 .left, .right {
     /*background-color:#2196F3;*/
-    padding:20px;
+    padding:13px;
     float: left;
     width: 20%; /* The width is 20%, by default */}
 
 .main/*, .content*/ {
     /*background-color:#f1f1f1;*/
-    padding:20px;
+    padding:13px;
     float: left;
     width: 60%; /* The width is 60%, by default */}
 .right {
@@ -33,6 +37,13 @@
     }
 }
 /*End of Responsive*/
+
+.clearfix:after, .row::after {
+    content: "";
+    display: table;
+    clear: both;}
+
+html {font-family: "Comic Sans MS", "Century Gothic", sans-serif;}
 body{
     background: hsla(247, 96%, 11%, 0.7) url("../img/background/night-sky.jpg") no-repeat fixed center;
     color: #beb8cc;
