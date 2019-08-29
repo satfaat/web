@@ -36,16 +36,17 @@ factorial(7);
 */
 
 // del
-var count = 5;
-var factorial = 1;
+let count = 5, factorial = 1;
   while(count >= 1){
-    factorial = factorial * count;
+    /*factorial = factorial * count;*/
+    factorial *=count; 
     count--;
     console.log(factorial + '=' + factorial + '*' + count);
   }
 console.log('result ' + factorial);
 
 // del
+let number = prompt("Enter number: ");
 var factorial = function(number){
   y = number + number;
   console.log(number + '+' + number);
@@ -54,13 +55,54 @@ var factorial = function(number){
 factorial(5);
 
 // del
-var factorial = function(number){
-  var result = 1;
-    while(number >= 1){
-      result = result * number;
-      number--;
-      console.log(result + '=' + result + '*' + number);
-    }
-    return result;
+
+let factorial_my = function(number){
+  let number = prompt("Enter number: ");
+  let result = 1;
+  if (number == 0){
+    return document.write(result);
+  } else {
+      while(number >= 1){
+        result = result * number;
+        number--;
+        console.log(result + '=' + result + '*' + number);
+        //document.write(result + '=' + result + '*' + number);
+      }
+      return /*result*/ document.write(result);
+  }
 }
-factorial(5);
+factorial_my(5);
+
+/* n * (n - 1) */
+function factorial(n) {
+  if (n == 0) {
+    return 1;
+  } else {
+    /*return factorial(n - 1) * n;*/
+    /*return document.write(factorial(n - 1) * n);*/
+    return factorial(n - 1) * n;
+  }
+}
+document.write(factorial(5) + " ");
+// or 
+console.log(factorial(5) + " ");
+
+  function fuctorial_3(n){
+    let count = 1;
+    let max = n;
+      while (count <= (max - 1)){
+        n = n * count;
+        count++;
+      }
+      document.write(n + " ");
+  }
+fuctorial_3(n);
+
+let total = 0, count = 1;
+  while (count <= 10) {
+    total += count;
+    count += 1;
+  }
+  console.log(total); // 55
+  // or
+  console.log(sum(range(1, 10))); // 55

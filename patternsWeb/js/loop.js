@@ -1,9 +1,16 @@
-Ada Lovelace The Enchantress of Numbers
-IF ELSE
-======
+/*Ada Lovelace The Enchantress of Numbers*/
+// IF ELSE
+//======
 
-While
-======
+// While
+//======
+
+/*
+while
+for
+for in
+forEach
+*/
 
 while (){
   console.log("");
@@ -47,8 +54,8 @@ for (var element of groceries){
   print (element);
 };
 
-++++++
-END FOR
+//++++++
+//END FOR
 
 var randomString = "";
 var alphabet =["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
