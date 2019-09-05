@@ -129,13 +129,19 @@ a.foo(2)
       set radius(r) { super.width = r; super.height = r; }
     }
     
-    // create a circle
-    var c = new Circle(4)
-    // returns: Circle {_width: 4, _height: 4}
-    c.radius = 2
-    // c is now: Circle {_width: 2, _height: 2}
-    c.area
+    
+    var c = new Circle(4) // create a circle
+      c.radius = 2 // returns: Circle {_width: 4, _height: 4}
+      c.area // c is now: Circle {_width: 2, _height: 2}
     // returns: 12.566370614359172
     c.radius = 5
     c.area
-    // returns: 78.53981633974483  
+    // returns: 78.53981633974483
+
+var person = {
+  firstName  : "John",
+  lastName   : "Doe",
+  id     : 5566,
+    myFunction : function() {return this;},
+    fullName : function() {return this.firstName + " " + this.lastName;}
+}; console.log(person.myFunction().id + ' ' + person.fullName());

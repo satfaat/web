@@ -1,56 +1,47 @@
-function print_log(txt){
-  console.log(txt);
-}
+var func = function () { console.log("Hello world!"); } // old
+hello = function() {return "Hello function"}
+//vs 
+hello = () => {return "Hello arrow function"} // arrow function
+  console.log(hello());
 
-var func = function(){
-  console.log("Hello world!");
-} // old
+var arrow_func = () => {console.log('New function, ES6')}
+  arrow_func();
 
-var sayHelloTo = function(name){
-  console.log("Hello " + name +"!");
-}; // old
+function (a=1, b=1) { // function code }
 
-var name =  prompt("name");
-var sayHelloTo = function(name){
-  console.log("Hello " + name +"!");
-};
-
-function say_hello_to(name){
-  console.log('Hello ' + name + "! ");
-} say_hello_to("One"); // new
-
-var name =  prompt("name");
-function say_hello_to(name){
-  console.log('Hello ' + name + "! ");
-} say_hello_to(name); // new with prompt
-
-var randomWords = ["Planet","Worm","Flower"];
-var pickRandomWord = function(words){
-  return words[Math.floor(Math.random()*words.length)];
-};
-//pickRandomWord(randomWords);
-console.log(pickRandomWord(randomWords));
-
-var random_words = ["Planet","Worm","Flower"];
-function pick_random_word(words){
-  return words[Math.floor(Math.random() * words.length)];
-} console.log(pick_random_word(random_words)); // new
-print_log(pick_random_word(random_words));
+  var x = a => a + 1; // arrow function
+    x(4) // returns 5
 
 // run function in <footer>
 document.getElementById("footer").innerHTML = footer();
-function footer(){
-	var fcon = document.querySelector('footer');
-	fcon.textContent = "<p>life is life</p>" + "</footer>";
-	return fcon.textContent;
-}
+  function footer(){
+    var fcon = document.querySelector('footer');
+    fcon.textContent = "<p>life is life</p>" + "</footer>";
+    return fcon.textContent;
+  }
 
-var number = prompt("Input a number: "); // output string
 function sum (number){
   let y = number + number;
   console.log(number + '+' + number);
   return y;
-} console.log(sum(5)); console.log(sum(number));
+} console.log(sum(5));
+
+var number = prompt("Input a number: "); // output string
+function sum (number){
+  alert(typeof number);
+  x = Number(number)
+  let y = x + x;
+  console.log(x + '+' + x);
+  return y;
+} console.log(sum(number));
+
+var number = prompt("Input a number: ");
+function sum (number){
+  alert(typeof number);
+  let y = Number(number)
+  y += y;
+  return y;
+} console.log(sum(number));
 
 function factorial(number){
   var result = 1;
@@ -83,8 +74,6 @@ function hobby_comparer(my_hobbies, ...your_hobbies){
   hobby_comparer(my_hobbies, 'volleyball', 'painting');
 
 /* ARROW functions */
-var x = a => a + 1;
-x(4) // returns 5
 
 function(x, y) { return x + y;} //ES5
 (x, y) => x + y //ES6
@@ -125,3 +114,14 @@ x(2, 3)
 x(2, 3, 4, 5)*/
 // prints
 /*a = 2, b = 3, 2 args left*/
+
+function myFunction (x, y) {
+  if (y === undefined) { y = 0; }
+}
+
+function myFunction() {
+  var txt = "";
+  if (document.getElementById("id1").validity.rangeOverflow) {
+    txt = "Value too large";
+  } else { txt = "Input OK"; } document.getElementById("demo").innerHTML = txt;
+}

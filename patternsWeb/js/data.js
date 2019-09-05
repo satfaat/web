@@ -9,6 +9,31 @@ typeof undefined var void while with yield
 var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var sln = txt.length;
 
+// Declare and initiate at the beginning
+var firstName = "",
+lastName = "",
+price = 0,
+discount = 0,
+fullPrice = 0,
+myArray = [],
+myObject = {};
+
+var x1 = {};           // new object
+var x2 = "";           // new primitive string
+var x3 = 0;            // new primitive number
+var x4 = false;        // new primitive boolean
+var x5 = [];           // new array object
+var x6 = /()/;         // new regexp object
+var x7 = function(){}; // new function object
+
+var x = 5 + 7;       // x.valueOf() is 12,  typeof x is a number
+var x = 5 + "7";     // x.valueOf() is 57,  typeof x is a string
+var x = "5" + 7;     // x.valueOf() is 57,  typeof x is a string
+var x = 5 - 7;       // x.valueOf() is -2,  typeof x is a number
+var x = 5 - "7";     // x.valueOf() is -2,  typeof x is a number
+var x = "5" - 7;     // x.valueOf() is -2,  typeof x is a number
+var x = 5 - "x";     // x.valueOf() is NaN, typeof x is a number
+
 /*
 statements
 looping
