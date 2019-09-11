@@ -37,10 +37,9 @@ while (remainingLetters > 0){
           remainingLetters--;
         }
       }
-    }
-//The end of the game loop
+    } // The end of the game loop
 }
 
 //Show the answer and congratulate the player
 alert(answerArray.join(""));
-alert("Good job! The answer was "+word);
+alert("Good job! The answer was " + word);

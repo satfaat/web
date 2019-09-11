@@ -1,7 +1,7 @@
 'use strict'
 
 /* INCLUDE */ 
-var title = (document.body.id !="") ? title = document.body.id + " " + navigator.onLine : title = "No title ";
+var title = (document.body.id != "") ? title = document.body.id + " " + navigator.onLine : title = "No title ";
 
 
 
@@ -23,13 +23,16 @@ var linkjsLib = ['<script src="https://www.w3schools.com/lib/w3.js"></script>',
 
     // run function in HEAD
 function addToHead(title, meta, linkcss){
-    return "<title>"+title+"</title>" + meta.concat(linkcss, linkjsLib).join('');
+    return "<title>" + title + "</title>" + meta.concat(linkcss, linkjsLib).join('');
 }; document.head.insertAdjacentHTML('beforeend', addToHead(title, meta, linkcss));
 
   // function to add content in FOOTER
 function addToFooter(linkjs){
     return linkjs.join('');
 }; document.getElementById("htmFooter").insertAdjacentHTML('beforeend', addToFooter(linkjs));
+
+var add_to_footer = (linkjs) => { return linkjs.join(''); }
+    document.getElementById("htmFooter").insertAdjacentHTML( 'beforeend', add_to_footer(linkjs) );
 
 //w3.includeHTML();
 /* END OF INCLUDE */

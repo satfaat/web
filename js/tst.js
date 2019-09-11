@@ -29,3 +29,13 @@ while (scoops > 0) {
     //alert('another scoop!');
     scoops -= 1;
 }
+
+var atSign="@", firstPart="sat",
+	ispP1="faat", ispP2="ma",
+    ispP3="il.ru", mToPart1="mai",
+    mToPart2="lto:";
+    
+var wholeAddress = firstPart + ispP1 + atSign + ispP2 + ispP3;
+var mt = mToPart1 + mToPart2;
+var hrefP1 = "<a href =" + mt + wholeAddress + "> Пишите мне.</a>";
+    document.write("<p> click here to email me </p>" + " " + hrefP1);

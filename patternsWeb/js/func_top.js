@@ -14,3 +14,8 @@ var random_words = ["Planet","Worm","Flower"];
 var to_celsius = (fahrenheit) => {return (5 / 9) * (fahrenheit - 32);}
     //console.log(to_celsius(30));
 
+function factorial(n) {
+    if (n == 0) {
+        return 1;
+    } else { return factorial(n - 1) * n; }
+} console.log(factorial(5) + " ");

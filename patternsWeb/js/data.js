@@ -56,6 +56,9 @@ js;
 ! not
 */
 
+let name = "Codecademy";
+console.log(`Hello, ${name}!`);
+
 var stringNum="5";
 var num=5;
 stringNum === num; //false
