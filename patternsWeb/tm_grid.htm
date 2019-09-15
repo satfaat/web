@@ -1,0 +1,145 @@
+<!DOCTYPE html><html><head>
+
+    <style>
+        /* background */
+            * {box-sizing:border-box;}
+            body {
+                background: hsla(247, 96%, 11%, 0.7) url("../../img/background/tree_4.jpg") no-repeat fixed center;
+                background-size: cover;
+                color: #beb8cc;
+                /*color: #db6363;*/
+                text-align: center;
+                width: 100%;
+                font-size: 100%;
+                /*"Times New Roman", Times, Consolas, serif*/
+                justify-content: center;
+            }
+        /* END of background */
+
+        /*LINKS*/
+            /*a{
+            text-decoration:none;
+            color: #008CBA;}*/
+            /*a:link {color: #008CBA;}/* unvisited link */
+            /*a:visited {color: green;}/* visited link */
+            /*a:hover {color: red;}/* mouse over link */
+            /*a:active {color: #008CBA;}/* selected link */
+
+            .btn_lnk_1:link, .btn_lnk_1:visited {
+            background-color: hsla(195, 100%, 40%, 0.6);
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 40px;
+            }
+            .btn_lnk_1:hover, .btn_lnk_1:active {background-color: hsla(4, 90%, 58%, 0.6);}
+        /* END links */
+
+        /* GRID type 1 */
+        .item1 { grid-area: header; }
+        .item2 { grid-area: menu; }
+        .item3 { grid-area: main; }
+        .item4 { grid-area: right; }
+        .item5 { grid-area: footer; }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'menu main main main right right'
+                'menu footer footer footer footer footer';
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container > div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+        /* END GRID type 1 */
+
+        /* GRID type 2 */
+            .t_grid {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto;
+                /*background-color: #2196F3;*/
+                grid-gap: 10px;
+                padding: 5px;
+            }
+            .t_dt {
+                background-color: rgba(255, 255, 255, 0.8);
+                border: 1px solid rgba(0, 0, 0, 0.8);
+                padding: 8px;
+                font-size: 21px;
+                text-align: center;
+            }
+        /* END GRID type 2 */
+
+        /* GRID test */
+            .grid {
+                display:grid;
+                grid-gap: 10px;
+                border: 2px blue solid;
+                width: 100%;
+                grid-template: repeat(4, 1fr 2fr) / repeat(4, 3fr 2fr);
+            }
+
+            .box {
+                background-color: #922d2d;
+                color: #fff;
+                border-radius: 40px;
+                border: 2px dodgerblue solid;
+                font-size: 20px;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+                text-align: center;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+        /* END GRID test */
+    </style>
+
+</head><body>
+
+    <h1>Grid Layouts</h1>
+
+    <p>This grid layout contains six columns and three rows:</p>
+    <div class="grid-container">
+        <div class="item1">Header</div>
+        <div class="item2">Menu</div>
+        <div class="item3">Main</div>  
+        <div class="item4">Right</div>
+        <div class="item5">Footer</div>
+    </div>
+
+    <h2>test</h2>
+        <div class="grid">
+            <div class="box grid_header">Header</div>
+            <div class="box grid_menu">menu</div>
+            <div class="box grid_aside_l">aside_l</div>
+            <div class="box grid_main">main</div>
+            <div class="box grid_aside_r">aside_r</div>
+            <div class="box grid_footer">footer</div>
+        </div>
+
+
+    <h2>Code examples web</h2>
+    <div class="t_grid">
+        <a class="btn_lnk_1" href="hf-mv.com" target="_blank">head first mobile web</a>
+        <a class="btn_lnk_1" href="https://resources.oreilly.com/examples/9780596101978/tree/master" target="_blank">head first</a>
+        <a class="btn_lnk_1" href="https://resources.oreilly.com/examples" target="_blank">head first</a>
+    </div>
+
+    <h2>Musicians</h2>
+    <p class="musician">Santigold</p>
+
+
+    <script>
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    </script>
+</body></html>
