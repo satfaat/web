@@ -3,9 +3,11 @@
 * Date of birth: 11.08.1986
 
 ## About me
-**Communicable** : Due to my job I often discuss something with people or explaining something to people. I like to help people to help to resolve their issue. 
-**Initiative** : If there is something that I cold do better i always try to do it and didn't wait wait that somebody told me how to do it. If something I don't know I try to fine more information in manual or in internet.And like to learn new experience. 
-**Responsible** : If I did mistake, I try to understand where I was wrong and try to learn more that I will never do this mistakes again.
+I don’t have much experience. There was branch that programming controllers in the department where I worked as design engineer. 
+And that is why I started interested in programming. I started to learn java by myself.
+And in university I learned c++, html and sql. So HTML was the easiest start to do web site. Then I switched to learn web programming by O'Reilly books. And also during studying in university I try to find job. But it was not easy and unsuccessful for me.  
+I also went to PHP courses to company that told us we need first to by their courses and then they will hire us while was studying in university. But after we completed courses they even didn't give us certificates.
+So it became my hobby. For my diploma I did a website with PHP and SQL. Went work to Help Desk and now working in SSI Schaefer. But I still interested in doing web sites and trying to do web application and practice in web programming in my free time. But for me will be much better if I could spend more time on practicing in programming. I try to learn basics of Java, PHP, javaScript, C#, ruby, Python. But I decided to continue learn javaScript first. And then to learn Python as it also used for web development for example django. Because try to learn many languages it makes no sense.
 
 | Contacts| | 
 | --- | --- |
@@ -21,6 +23,9 @@
 | [codecademy achievements](https://www.codecademy.com/profiles/core4520403572) |
 | [website](http://nontest.000webhostapp.com/) |
 | [rs.school](https://app.rs.school/login) |
+
+## CODE EXAMPLES
+
 
 ## SKILLS
 
