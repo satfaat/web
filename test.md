@@ -26,6 +26,98 @@ So it became my hobby. For my diploma I did a website with PHP and SQL. Went wor
 
 ## CODE EXAMPLES
 
+#### Example of PHP code: auto inserting of images to html.
+```php
+<?php
+define('IMGDIR', 'images/slideshow/');
+$scan=scandir(IMGDIR);
+echo '<div class="phoenix-slider">';
+for($i=0; $i<count($scan); $i++){
+	$ext= substr($scan[$i], strpos($scan[$i], '.'));//extension
+	$file_types = array('.jpg', '.gif', '.bmp', '.png', '.jpeg',
+							'.JPG', '.BMP', '.PNG', '.JPEG');
+		if (in_array ($ext, $file_types)){
+			echo '<div class="phoenix-feather">
+						<img src="' . IMGDIR . $scan[$i] . '" alt="' . $scan[$i] . '">
+					</div><!--END phoenix-feather-->';
+		}
+}
+echo '</div><!--END phoenix-slider-->';
+?>
+```
+
+#### HTML example: form for contact
+```html
+<form class="contact" action="contact_form.php" method="post">
+	<fieldset>	<legend>Или отправить нам сообщение через форму ниже:</legend>
+		<p class="form">
+            <input type="text" name="name_id" value="" size="40" placeholder="Имя..." />
+		</p>
+		<p class="form">
+			<input type="text" name="email" id="email" size="40" placeholder="Email" required />
+		</p>
+		<p class="form">
+			<input type="text" name="phone" id="phone" size="40" placeholder="Ваш телефон..." />
+		</p>
+		<p class="form">
+			<textarea rows="6" cols="50" name="comment" placeholder="Текст письма..."></textarea>
+		</p>
+		<p class="form">
+			<input type="submit" id="send_button" value="Отправить" />
+			<input type="reset" value="Очистить" />
+		</p>
+	</fieldset>
+</form>
+```
+
+#### Javascript example: include part of html (header and footer)
+```js
+/* INCLUDE */ 
+var title = (document.body.id != "") ? title = document.body.id + " " + navigator.onLine : title = "No title ";
+var meta = [
+    '<meta charset="UTF-8">',
+    '<meta name="viewport" content="width=device-width, initial-scale=1.0">'];
+var linkcss = [
+    "<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>",
+    "<link rel='stylesheet' href='css/own.css'/>"];
+var linkjs = [    
+    '<script src="js/mainmenu.js"></script>',
+    '<script src="js/clock.js"></script>',
+    '<script src="js/effects.js"></script>'];
+var linkjsLib = ['<script src="https://www.w3schools.com/lib/w3.js"></script>',
+                    '<script src="https://cdn.jsdelivr.net/npm/vue"></script>',
+                    '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>',
+                    '<noscript>You need to enable JavaScript to view the full site.</noscript>',
+                    '<script src="js/modernizr.js"></script>'];
+
+    // run function in HEAD
+function addToHead(title, meta, linkcss){
+    return "<title>" + title + "</title>" + meta.concat(linkcss, linkjsLib).join('');
+}; document.head.insertAdjacentHTML('beforeend', addToHead(title, meta, linkcss));
+
+  // function to add content in FOOTER
+function addToFooter(linkjs){
+    return linkjs.join('');
+}; document.getElementById("htmFooter").insertAdjacentHTML('beforeend', addToFooter(linkjs));
+
+var add_to_footer = (linkjs) => { return linkjs.join(''); }
+    document.getElementById("htmFooter").insertAdjacentHTML( 'beforeend', add_to_footer(linkjs) );
+//w3.includeHTML();
+/* END OF INCLUDE */
+```
+
+#### Javascript example: email address parsing
+```js
+var ml = {
+    atSign: "@", firstPart: "sat",
+    ispP1: "faat", ispP2: "ma",
+    ispP3: "il.ru", mToPart1: "mai",
+    mToPart2: "lto:",
+    wholeAddress: function() { return this.firstPart + this.ispP1 + this.atSign + this.ispP2 + this.ispP3; },
+    mt: function() { return this.mToPart1 + this.mToPart2; },
+    hrefP1: function() { return "<a href =" + this.mt() + this.wholeAddress() + "> Пишите мне.</a>"; }
+}; document.write( "<p> click here to email me </p>" + " " + ml.hrefP1() );
+```
 
 ## SKILLS
 
