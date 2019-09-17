@@ -8,12 +8,35 @@
                 background-size: cover;
                 color: #beb8cc;
                 /*color: #db6363;*/
-                text-align: center;
-                width: 100%;
+                /*text-align: center;*/
+                /*width: 100%;*/
                 font-size: 100%;
                 /*"Times New Roman", Times, Consolas, serif*/
-                justify-content: center;
+                /*justify-content: center;*/
             }
+            p, .txt { background-color: bisque; /*color:*/  height: 100px; width: 300px; }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover { background-color: #111; }
         /* END of background */
 
         /*LINKS*/
@@ -102,6 +125,26 @@
                 padding-bottom: 20px;
             }
         /* END GRID test */
+
+        /*display type*/
+        .dsp_none{display: none; background-color: #beb8cc; float:left;}
+        .dsp_inline {display: inline; background-color: azure; float:left;}
+        .dsp_block{display: block; background-color: #beb8cc; float:left;}
+        .dsp_inline_block{display: inline-block; background-color: azure; float:left;}
+
+        #dsp_test {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #c3c3c3;
+            display: -webkit-flex; /* Safari */
+            -webkit-flex-direction: row-reverse; /* Safari 6.1+ */
+            display: block;
+            flex-direction: row-reverse;
+        }
+        #dsp_test div {
+            width: 50px;
+            height: 50px;
+        }
     </style>
 
 </head><body>
@@ -138,6 +181,57 @@
     <h2>Musicians</h2>
     <p class="musician">Santigold</p>
 
+
+
+/* display  */
+    <h2>Display none:</h2>
+    <div class="dsp_none">
+        <p> text 1</p>
+        <p> text 2</p>
+        <div class="txt">Some text 1</div>
+        <div class="txt">Some text two</div>
+    </div>
+
+    <h2>Display inline:</h2>
+    <div class="dsp_inline">
+        <p> text 1</p>
+        <p> text 2</p>
+        <div class="txt">Some text 1</div>
+        <div class="txt">Some text two</div>
+    </div>
+
+    <h2>Display block:</h2>
+    <div class="dsp_block">
+        <p> text 1</p>
+        <p> text 2</p>
+        <div class="txt">Some text 1</div>
+        <div class="txt">Some text two</div>
+    </div>
+
+    <h2>Display inline_block:</h2>
+    <div class="dsp_inline_block">
+        <p> text 1</p>
+        <p> text 2</p>
+        <div class="txt">Some text 1</div>
+        <div class="txt">Some text two</div>
+    </div>
+
+<h1>The flex-direction Property</h1>
+<div id="dsp_test">
+  <div style="background-color:coral;">A</div>
+  <div style="background-color:lightblue;">B</div>
+  <div style="background-color:khaki;">C</div>
+  <div style="background-color:pink;">D</div>
+  <div style="background-color:lightgrey;">E</div>
+  <div style="background-color:lightgreen;">F</div>
+</div>
+
+<ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+</ul>
 
     <script>
         document.getElementById("demo").innerHTML = "Hello JavaScript!";
