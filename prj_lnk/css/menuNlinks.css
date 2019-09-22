@@ -21,15 +21,17 @@
 /*a:hover {color: red;}/* mouse over link */
 /*a:active {color: #008CBA;}/* selected link */
 
-.btn_lnk:link, .btn_lnk:visited {
+.btn_lnk_1:link, .btn_lnk_1:visited {
   background-color: hsla(195, 100%, 40%, 0.6);
   color: white;
-  padding: 14px 25px;
+  padding: 15px;
+  margin: 5px 3px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  border-radius: 30px;
 }
-.btn_lnk:hover, .btn_lnk:active {background-color: hsla(4, 90%, 58%, 0.6);}
+.btn_lnk_1:hover, .btn_lnk_1:active {background-color: hsla(4, 90%, 58%, 0.6);}
 
 .pagination a{
   text-decoration: none;

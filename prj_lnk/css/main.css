@@ -1,0 +1,82 @@
+@import url("menuNlinks.css");
+@import url("table.css");
+@import url("form.css");
+@import url("img.css");
+@import url("txt.css");
+@import url("color.css");
+
+*, *::before, *::after {
+  box-sizing:border-box;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+}
+
+
+
+.clearfix:after, .row::after {
+  content: "";
+  display: table;
+  clear: both;
+  /*margin: auto;*/
+}
+
+html {font-family: "Comic Sans MS", "Century Gothic", sans-serif;}
+body{
+  background: hsla(247, 96%, 11%, 0.5) url("../../img/background/night_sky.jpg") no-repeat fixed center;
+  /*"../../img/background/tree_4.jpg"*/
+  background-size: cover;
+  color: #beb8cc;
+  /*"Times New Roman", Times, Consolas, serif*/
+  font-size: 100%;
+  justify-content: center;}
+
+.content_lnk {
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 1px 3px rgba(14, 9, 9, 0.5), 0 1px 2px rgba(0, 0, 0, 0.7);
+  border-radius: 30px;
+}
+
+.aside {
+  background-color: hsla(209, 82%, 58%, 0.5);
+  padding: 13px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.card {
+  margin: 8px 0;
+  padding: 10px 20px;
+  box-shadow: 0 1px 3px rgba(14, 9, 9, 0.5), 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+.card:first-child {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.card:last-child {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.color_bg_white_glass {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 1rem;
+}
+.grid_card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-gap: .5rem;
+  align-items: flex-start;
+}
+/***COLOR***/
+.color_bg_white_glass {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/***LINKS***/
