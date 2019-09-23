@@ -1,12 +1,38 @@
+/*layout*/
+*, *::before, *::after {
+  box-sizing:border-box;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+}
+body{
+  background-color: rgb(255, 255, 255);
+}
+header{
+  background: /*url("../assets/img background/Layer 19.png"),*/ url("../assets/img background/Layer 20.png") no-repeat fixed /*center*/;
+  background-size: cover;
+  max-width: 1300px;
+  max-height: 566px;
+  margin: 0 auto;
+  position: relative;
+}
+img.logo{
+  position: absolute;
+  /*top: 30px;
+  left: 142px;*/
+  margin-top: 30px;
+  margin-left: 142px;
+}
 h1.logo{
   font-size: 41px;
-  letter-spacing: 0px;
   color: #fff;
   font-family: "Lucida Sans";
   font-style: italic;
-  text-align: center;
-  box-shadow: 1px 1.732px 0px rgba(0,0,0,0.42);
+  text-transform: uppercase;
+  padding-top: 40px;
+  margin-left: 232px;
+  margin-top: 0;
 }
+
 .motto{
   font-size: 63px;
   letter-spacing: 1px;
