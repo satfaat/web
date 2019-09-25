@@ -3,6 +3,9 @@ var cat = {};
   cat.legs = 3;
   cat.name = "Harmony";
   cat.color = "Tortoiseshell";
+  console.log(Object.values(cat));
+
+var car = {type:"Fiat", model:"500", color:"white"};
 
 var myCrazyObject = {
   "name":"A ridiculous object",
@@ -26,8 +29,6 @@ var myBackpack = {
   equipment: ["map", "compass"],
   clothing: ["hat", "jacket", "scarf"]
 }; print(myBackpack.food);
-
-var car = {type:"Fiat", model:"500", color:"white"};
 
 /* Object properties ES6 */
 
@@ -136,11 +137,19 @@ var person = {
     myFunction : function() {return this;},
     fullName : function() {return this.firstName + " " + this.lastName;}
 }; console.log(person.myFunction().id + ' ' + person.fullName());
+console.log(Object.values(person));
+// expected output: Array ["somestring", 42, false]
 
-var txt = "";
-var person = {fname:"John", lname:"Doe", age:25}; 
-var x;
-for (x in person) {
-  txt += person[x] + " ";
-}
+var txt = "",
+person = {fname:"John", lname:"Doe", age:25}, 
+item;
+  for (item in person) {
+    txt += person[item] + " ";
+  } console.log(txt);
 document.getElementById("demo").innerHTML = txt;
+
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+}; console.log(Object.values(object1)); // expected output: Array ["somestring", 42, false]
