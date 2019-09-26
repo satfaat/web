@@ -15,13 +15,22 @@ header{
   margin: 0 auto;
   position: relative;
 }
-img.logo{
+/*img.logo{
   position: absolute;
   /*top: 30px;
   left: 142px;*/
-  margin-top: 30px;
+  /*margin-top: 30px;
   margin-left: 142px;
+}*/
+.logo_svg{
+  float:left;
+  max-width: 79px;
+  max-height: 79px;
+  background-image: url("../assets/svg/Shape 8 copy 3.svg"),  url("../assets/svg/Shape 8 copy 4.svg");
+  background-repeat: no-repeat;
+	background-position: center;
 }
+
 h1.logo{
   font-size: 41px;
   color: #fff;
