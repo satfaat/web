@@ -42,15 +42,6 @@ td:hover/*, th:hover*/ {
 }
 /* End of Link gallery*/
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  /*align-items: center;*/
-  /*background-color: #2196F3;*/
-  grid-gap: 1rem;
-  padding: 4rem 2rem;}
-
 .t_dt {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
