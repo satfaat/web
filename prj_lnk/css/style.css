@@ -5,7 +5,6 @@
 @import url("txt.css");
 @import url("color.css");
 
-
 *, *::before, *::after {
   box-sizing:border-box;
   -moz-box-sizing: border-box; 
@@ -16,10 +15,11 @@
   content: "";
   display: table;
   clear: both;
-  /*margin: auto;*/
 }
 
 html {font-family: "Comic Sans MS", "Century Gothic", sans-serif;}
+
+/*** Layout ***/
 body{
   background: hsla(247, 96%, 11%, 0.5) url("../../img/background/night_sky.jpg") no-repeat fixed center;
   /*"../../img/background/tree_4.jpg"*/
@@ -45,11 +45,11 @@ body{
   box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);
 }
 
-.card {
+/*.card {
   margin: 8px 0;
   padding: 10px 20px;
   box-shadow: 0 1px 3px rgba(14, 9, 9, 0.5), 0 1px 2px rgba(0, 0, 0, 0.7);
-}
+}*/
 .card:first-child {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -59,9 +59,6 @@ body{
   border-bottom-right-radius: 30px;
 }
 
-.color_bg_white_glass {
-  background-color: rgba(255, 255, 255, 0.9);
-}
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -75,9 +72,7 @@ body{
   align-items: flex-start;
 }
 /*** COLOR ***/
-.color_bg_white_glass {
-  background-color: rgba(255, 255, 255, 0.2);
-}
+
 /*** LINKS ***/
 
 /*** Style the tab ***/
@@ -104,4 +99,14 @@ body{
   /*background-color: #ccc;*/
 }
 .tab-content { display: none; }
+
+/*** Cursor ***/
 summary {cursor: pointer;}
+
+/*** Other ***/
+.shadow-white {
+  box-shadow: 0 1px 3px rgba(235, 225, 225, 0.5), 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+.shadow-black {
+  box-shadow: 0 1px 3px rgba(14, 9, 9, 0.5), 0 1px 2px rgba(0, 0, 0, 0.7);
+}
