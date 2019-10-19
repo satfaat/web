@@ -40,7 +40,7 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
     }
 
 /*** tab links ***/
-function open_it(evt, it_name) {
+function part_it(evt, it_name) {
     let i, tab_content, tab_links;
 
     tab_content = document.getElementsByClassName("tab-content");

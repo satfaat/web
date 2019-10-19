@@ -21,17 +21,20 @@
 /*a:hover {color: red;}/* mouse over link */
 /*a:active {color: #008CBA;}/* selected link */
 
-.btn_lnk_1:link, .btn_lnk_1:visited {
+/*.btn_lnk_1:link, .btn_lnk_1:visited*/ .btn-after a:link, a:visited {
   background-color: hsla(195, 100%, 40%, 0.6);
   color: white;
-  padding: 15px;
-  margin: 5px 3px;
+  padding: 10px;
+  margin: 3px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   border-radius: 30px;
+  box-shadow: 2px 4px 4px 2px rgba(0,0,0,0.7);
+  -webkit-box-shadow: 2px 4px 4px 2px rgba(0,0,0,0.7);
+  -moz-box-shadow: 2px 4px 4px 2px rgba(0,0,0,0.7);
 }
-.btn_lnk_1:hover, .btn_lnk_1:active {background-color: hsla(4, 90%, 58%, 0.6);}
+/*.btn_lnk_1:hover, .btn_lnk_1:active*/ .btn-after a:hover, a:active {background-color: hsla(130, 90%, 70%, 0.6);}
 
 .pagination a{
   text-decoration: none;
