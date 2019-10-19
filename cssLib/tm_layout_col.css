@@ -47,7 +47,7 @@
 }
 /*End of Responsive*/
 
-.clearfix:after, .row::after {
+.clearfix::after, .row::after {
   content: "";
   display: table;
   clear: both;

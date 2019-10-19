@@ -1,0 +1,120 @@
+/*layout*/
+*, *::before, *::after {
+  box-sizing:border-box;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+}
+body{
+  background-color: rgb(255, 255, 255);
+}
+.content{
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.clearfix::after, .row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* HEADER */
+header{
+  background: url("../assets/img_bg/bg_header.png") no-repeat fixed /*center*/;
+  background-size: cover;
+}
+/*img.logo{
+  position: absolute;
+  /*top: 30px;
+  left: 142px;*/
+  /*margin-top: 30px;
+  margin-left: 142px;
+}*/
+.logo-wrapper{
+  padding-top: 22px;
+  padding-left: 113px;
+}
+.logo-img{
+  float:left;
+  width: 80px;
+  height: 80px;
+  background-image: url("../assets/img/logo_star_1.png"),  url("../assets/img/logo_star_2.png");
+  background-repeat: no-repeat;
+	background-position: center;
+}
+
+.logo-txt{
+  font-size: 41px;
+  color: #fff;
+  font-family: "Lucida Sans";
+  font-style: italic;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-left: 90px;
+  margin-top: 0;
+}
+.header-vd{
+  width: 549px;
+  height: 327px;
+  padding-left: 113px; 
+}
+
+.main-nav{ 
+  padding-top: 20px;
+}
+.ul-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-left: 524px;
+  width: 454px;
+  height: 42px;
+  background-color: #F5C506;
+  box-shadow: -5px -5px 0 rgba(245,197,6,0.5), -10px -10px 0 rgba(245,197,6,0.25);
+}
+.ul-icon li {
+  position: relative;
+	display: block;
+	float: left;
+  flex-grow: 1;
+  border-right: 1px solid #9B7D08;
+}
+.ul-icon a {
+  display: inline-block;
+	position: relative;
+	text-decoration: none;
+	color:#9B7D08;
+	padding-left: 35px;
+  text-transform: uppercase;
+  font-family: "Segoe WP";
+	font-size: 17px;
+  line-height: 40px;
+  letter-spacing: 0px;
+  height: 40px;
+  text-align: center;
+}
+.ul-icon a::before{
+  content: "";
+	display: inline-block;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	margin-left:-35px;
+	background-position: 50% 50%;
+}
+.i-aboutus::before{background-image: url("../assets/img/aboutus.png");}
+.i-services::before{background-image: url("../assets/img/service.png");}
+.i-contact::before{background-image: url("../assets/img/email.png");}
+
+.motto{
+  font-size: 63px;
+  letter-spacing: 1px;
+  
+  font-family: "Asap";
+  text-align: center;
+  margin-left: 563px;
+}
+.motto-yellow{
+  color: #f5c506;
+}
