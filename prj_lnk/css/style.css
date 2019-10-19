@@ -5,18 +5,17 @@
 @import url("txt.css");
 @import url("color.css");
 
+/*** Common ***/
 *, *::before, *::after {
   box-sizing:border-box;
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box;
 }
-
-.clearfix:after, .row::after {
+.clearfix::after, .row::after {
   content: "";
   display: table;
   clear: both;
 }
-
 html {font-family: "Comic Sans MS", "Century Gothic", sans-serif;}
 
 /*** Layout ***/
