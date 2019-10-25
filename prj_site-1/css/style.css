@@ -1,9 +1,29 @@
-﻿body {
-	background-color:	silver;
-	font-family:	"Times New Roman", serif;
-	font-size:		medium;
-	margin:		0px;
+﻿@import url("menuNlinks.css");
+@import url("table.css");
+@import url("form.css");
+@import url("img.css");
+@import url("txt.css");
+@import url("color.css");
+
+/*** Common ***/
+*, *::before, *::after {
+  box-sizing:border-box;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
 }
+.clearfix::after, .row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+html {font-family: "Comic Sans MS", "Century Gothic", sans-serif;}
+
+body{
+	background: hsla(247, 96%, 11%, 0.5) url("../../img/background/night_sky.jpg") no-repeat fixed center;
+	background-size: cover;
+	color: #323036;
+	font-size: 100%;
+	justify-content: center;}
 #allcontent {
 	/*width:		800px;*/
 	padding-top:	5px;
