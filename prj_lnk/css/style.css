@@ -19,12 +19,26 @@
 html {font-family: "Comic Sans MS", "Century Gothic", sans-serif;}
 
 /*** Layout ***/
-body{
-  background: hsla(247, 96%, 11%, 0.5) url("../../img/background/night_sky.jpg") no-repeat fixed center;
-  background-size: cover;
+body, .own, .public {
   color: #beb8cc;
   font-size: 100%;
   justify-content: center;}
+.own {
+  background: hsla(247, 96%, 11%, 0.7) url("../../img/background/tree_4.jpg") no-repeat fixed center;
+  background-size: cover;
+}
+.public {
+  background: hsla(247, 96%, 11%, 0.5) url("../../img/background/night_sky.jpg") no-repeat fixed center;
+  background-size: cover;
+}
+.dark {
+  background: hsla(247, 96%, 11%, 0.5) url("../../img_ign/ciri.jpg") no-repeat fixed center;
+  background-size: cover;
+}
+#lnk_wrk{
+  background: hsla(247, 96%, 11%, 0.5) url("../../img/background/work_3.jpg") no-repeat fixed center;
+  background-size: cover;
+}
 
 .content {
   max-width: 1200px;

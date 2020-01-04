@@ -39,7 +39,10 @@
   -webkit-box-shadow: 2px 4px 4px 2px rgba(0,0,0,0.7);
   -moz-box-shadow: 2px 4px 4px 2px rgba(0,0,0,0.7);
 }
-/*.btn_lnk_1:hover, .btn_lnk_1:active*/ .btn-after a:hover, a:active {background-color: hsla(130, 90%, 70%, 0.6);}
+/*.btn_lnk_1:hover, .btn_lnk_1:active*/ .btn-after a:hover, a:active {
+  background-color: hsla(130, 90%, 70%, 0.6);
+  /*font-weight: bold;*/
+}
 
 .pagination a{
   text-decoration: none;
