@@ -132,3 +132,18 @@ function multiply(a, b){
   }
   return a * b;
 }
+
+var myWindow;
+function openWin() {
+  myWindow = window.open("", "", "width=400, height=200");
+  myWindow.blur();
+}
+function blurWin() {
+  myWindow.blur();
+}
+function focusWin() {
+  myWindow.focus();
+}
+<input type="button" value="Open new window" onclick="openWin()">
+<input type="button" value="Blur new window" onclick="blurWin()">
+<input type="button" value="Focus new window" onclick="focusWin()">

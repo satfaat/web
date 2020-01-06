@@ -18,3 +18,10 @@ console.log("Hello " + name);
   } else {
     console.log("Your name isn't very long.");
   }
+
+if (Math.random() < 0.5) {
+  text = "<a href='https://w3schools.com'>Visit W3Schools</a>";
+} else {
+  text = "<a href='https://wwf.org'>Visit WWF</a>";
+}
+document.getElementById("demo").innerHTML = text;

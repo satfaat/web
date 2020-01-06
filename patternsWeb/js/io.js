@@ -1,4 +1,7 @@
 // Ada Lovelace The Enchantress of Numbers
+<button type="button" onclick="document.getElementById('demo').style.display='block'">Click Me!</button>
+<script src="https://www.w3schools.com/js/myScript.js"></script>
+<button type="button" onclick="func()">btn</button>
 
 // INPUT
 // ====

@@ -106,3 +106,8 @@ let total = 0, count = 1;
   console.log(total); // 55
   // or
   console.log(sum(range(1, 10))); // 55
+
+  var base = 2;
+  function addTwo(input){
+    return parseInt(input) + base;
+  }

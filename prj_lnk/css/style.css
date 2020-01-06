@@ -4,6 +4,7 @@
 @import url("img.css");
 @import url("txt.css");
 @import url("color.css");
+@import url("anim.css");
 
 /*** Common ***/
 *, *::before, *::after {
@@ -24,11 +25,11 @@ body, .own, .public {
   font-size: 100%;
   justify-content: center;}
 .own {
-  background: hsla(247, 96%, 11%, 0.7) url("../../img/background/tree_4.jpg") no-repeat fixed center;
+  background: hsla(247, 96%, 11%, 0.7) url("../../img/bg/tree_4.jpg") no-repeat fixed center;
   background-size: cover;
 }
 .public {
-  background: hsla(247, 96%, 11%, 0.5) url("../../img/background/night_sky.jpg") no-repeat fixed center;
+  background: hsla(247, 96%, 11%, 0.5) url("../../img/bg/night_sky.jpg") no-repeat fixed center;
   background-size: cover;
 }
 .dark {
@@ -36,7 +37,7 @@ body, .own, .public {
   background-size: cover;
 }
 #lnk_wrk{
-  background: hsla(247, 96%, 11%, 0.5) url("../../img/background/work_3.jpg") no-repeat fixed center;
+  background: hsla(247, 96%, 11%, 0.5) url("../../img/bg/work_3.jpg") no-repeat fixed center;
   background-size: cover;
 }
 
