@@ -70,7 +70,7 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
     }
 
 /*** tab links ***/
-function part_it(evt, it_name) {
+function open_tab(evt, tab_name) {
     let i, tab_content, tab_links;
 
     tab_content = document.getElementsByClassName("tab-content");
@@ -91,7 +91,7 @@ function part_it(evt, it_name) {
         tab_links[i].className.replace(" active", "");
     }
 
-    document.getElementById(it_name).style.display = "grid";
+    document.getElementById(tab_name).style.display = "grid";
     evt.currentTarget.className += " active";
 }
 

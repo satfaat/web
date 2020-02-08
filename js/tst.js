@@ -39,3 +39,38 @@ var wholeAddress = firstPart + ispP1 + atSign + ispP2 + ispP3;
 var mt = mToPart1 + mToPart2;
 var hrefP1 = "<a href =" + mt + wholeAddress + "> Пишите мне.</a>";
     document.write("<p> click here to email me </p>" + " " + hrefP1);
+
+
+
+    function() {
+        gTable = document.getElementsByTagName("table")[0];
+        gTBody = gTable.tBodies[0];
+        if (gTBody.rows.length < 2)
+          return;
+        gUI_showHidden = document.getElementById("UI_showHidden");
+        var headCells = gTable.tHead.rows[0].cells,
+          hiddenObjects = false;
+      
+        function rowAction(i) {
+          return function(event) {
+            event.preventDefault();
+            orderBy(i);
+          }
+        }
+        for (var i = headCells.length - 1; i >= 0; i--) {
+          var anchor = document.createElement("a");
+          anchor.href = "";
+          anchor.appendChild(headCells[i].firstChild);
+          headCells[i].appendChild(anchor);
+          headCells[i].addEventListener("click", rowAction(i), true);
+        }
+        if (gUI_showHidden) {
+          gRows = Array.from(gTBody.rows);
+          hiddenObjects = gRows.some(row => row.className == "hidden-object");
+        }
+        gTable.setAttribute("order", "");
+        if (hiddenObjects) {
+          gUI_showHidden.style.display = "block";
+          updateHidden();
+        }
+      }

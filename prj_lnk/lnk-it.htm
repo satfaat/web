@@ -23,12 +23,12 @@
 
 <section class="content color_bg-dark_red-glass-10 shadow">
    <div class="tab">
-      <button class="tab-lnks" onclick="part_it(event,'code-lnks')">Code</button>
-      <button class="tab-lnks" onclick="part_it(event,'support-lnks')">Support</button>
-      <button class="tab-lnks" onclick="part_it(event,'search-lnks')">Search</button>
-      <button class="tab-lnks" onclick="part_it(event,'english-lnks')">English</button>
-      <button class="tab-lnks" onclick="part_it(event,'other-lnks')">Other</button>
-      <button class="tab-lnks" onclick="part_it(event,'sft-lnks')">Soft</button>
+      <button class="tab-lnks" onclick="open_tab(event,'code-lnks')">Code</button>
+      <button class="tab-lnks" onclick="open_tab(event,'support-lnks')">Support</button>
+      <button class="tab-lnks" onclick="open_tab(event,'search-lnks')">Search</button>
+      <button class="tab-lnks" onclick="open_tab(event,'english-lnks')">English</button>
+      <button class="tab-lnks" onclick="open_tab(event,'other-lnks')">Other</button>
+      <button class="tab-lnks" onclick="open_tab(event,'sft-lnks')">Soft</button>
    </div>
 
    <div class="tab-content grid" id="code-lnks">
@@ -44,13 +44,16 @@
       <article class="btn-after">
          <h2>code web tools</h2>
             <a class="btn_lnk_1" href="https://discordapp.com/" target="_blank">discord</a>
-            <a class="btn_lnk_1" href="" target="_blank"></a>
+            <a class="btn_lnk_1" href="https://dartpad.dev/" target="_blank">dartpad</a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
          <h3>web ide</h3>
             <a class="btn_lnk_1" href="http://brackets.io/" target="_blank">brackets</a>
             <a class="btn_lnk_1" href="https://code.visualstudio.com/" target="_blank">visualstudio</a>
+            <a class="btn_lnk_1" href="https://developer.android.com/studio" target="_blank">studio</a>
+            <a class="btn_lnk_1" href="" target="_blank"></a>
+            <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
          <h3>online tools</h3>
             <a class="btn_lnk_1" href="https://codepen.io/#" target="_blank">codepen</a>
@@ -84,6 +87,14 @@
             <a class="btn_lnk_1" href="https://www.npmjs.com/" target="_blank">npmjs</a>
             <a class="btn_lnk_1" href="https://reactjs.org/" target="_blank">reactjs</a>
             <a class="btn_lnk_1" href="https://facebook.github.io/react-native/" target="_blank">react-native</a>
+            <a class="btn_lnk_1" href="https://dart.dev/" target="_blank">dart</a>
+            <a class="btn_lnk_1" href="https://dart.dev/get-dart" target="_blank">get-dart</a>
+            <a class="btn_lnk_1" href="https://dart.dev/guides" target="_blank">dart-guides</a>
+            <a class="btn_lnk_1" href="https://flutter.dev/docs/get-started/install" target="_blank">docs-flutter</a>
+            <a class="btn_lnk_1" href="https://flutter.dev/docs/cookbook" target="_blank">cookbook-flutter</a>
+            <a class="btn_lnk_1" href="https://flutter.dev/docs/get-started/web" target="_blank">web-flutter</a>
+            <a class="btn_lnk_1" href="https://hacks.mozilla.org/" target="_blank">hacks</a>
+            <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
          <h3>Server</h3>
@@ -92,7 +103,9 @@
             <a class="btn_lnk_1" href="https://github.com/shelleyp/LearningNode2" target="_blank">LearningNode2</a>
             <a class="btn_lnk_1" href="https://nodejs.org/en/" target="_blank">nodejs-site</a>
             <a class="btn_lnk_1" href="https://github.com/nodejs/node-v0.x-archive/wiki/Node-Hosting" target="_blank">Node-Hosting</a>
-            <a class="btn_lnk_1" href="" target="_blank"></a>
+            <a class="btn_lnk_1" href="https://httpd.apache.org/download.cgi" target="_blank">apache</a>
+            <a class="btn_lnk_1" href="https://bitnami.com/" target="_blank">bitnami</a>
+            <a class="btn_lnk_1" href="https://nodejs.org/en/docs/" target="_blank">docs-nodejs</a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
@@ -311,7 +324,7 @@
       <article class="btn-after">
          <h2>it Linux</h2>
             <a class="btn_lnk_1" href="https://www.omgubuntu.co.uk/" target="_blank">omgubuntu.co.uk</a>
-            <a class="btn_lnk_1" href="" target="_blank"></a>
+            <a class="btn_lnk_1" href="https://ubuntu.com/tutorials" target="_blank">tutorials</a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
@@ -320,6 +333,9 @@
          <h2>IT windows</h2>
             <a class="btn_lnk_1" href="https://docs.microsoft.com/en-us/powershell/" target="_blank">powershell doc</a>
             <a class="btn_lnk_1" href="https://support.bluestacks.com/hc/en-us/sections/360001186931-Frequently-Asked-Questions" target="_blank">faq</a>
+            <a class="btn_lnk_1" href="https://docs.microsoft.com/ru-ru/powershell/" target="_blank">powershell</a>
+            <a class="btn_lnk_1" href="https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md" target="_blank">UsingJsonSettings</a>
+            <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
@@ -407,6 +423,14 @@
 <!-- Soft -->
    <div class="tab-content grid" id="sft-lnks">
       <article class="btn-after">
+         <h2>devOps</h2>
+            <a class="btn_lnk_1" href="https://chocolatey.org/" target="_blank">chocolatey</a>
+            <a class="btn_lnk_1" href="https://chocolatey.org/packages" target="_blank">packages</a>
+            <a class="btn_lnk_1" href="" target="_blank"></a>
+            <a class="btn_lnk_1" href="" target="_blank"></a>
+            <a class="btn_lnk_1" href="" target="_blank"></a>
+      </article>
+      <article class="btn-after">
          <h2>bootable USB</h2>
             <a class="btn_lnk_1" href="https://rufus.ie/" target="_blank">rufus</a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
@@ -417,7 +441,7 @@
       <article class="btn-after">
          <h2>os</h2>
             <a class="btn_lnk_1" href="https://system76.com/" target="_blank">system76</a>
-            <a class="btn_lnk_1" href="" target="_blank"></a>
+            <a class="btn_lnk_1" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank">WSL</a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
@@ -425,6 +449,18 @@
       <article class="btn-after">
          <h2>cleaner</h2>
             <a class="btn_lnk_1" href="https://www.bleachbit.org/" target="_blank">bleachbit</a>
+            <a class="btn_lnk_1" href="" target="_blank"></a>
+            <a class="btn_lnk_1" href="" target="_blank"></a>
+            <a class="btn_lnk_1" href="" target="_blank"></a>
+            <a class="btn_lnk_1" href="" target="_blank"></a>
+      </article>
+      <article class="btn-after">
+         <h2>customization</h2>
+            <a class="btn_lnk_1" href="https://www.videolan.org/vlc/skins.html" target="_blank">vlc skins</a>
+            <a class="btn_lnk_1" href="https://www.rainmeter.net/" target="_blank">rainmeter</a>
+            <a class="btn_lnk_1" href="https://www.rainmeter.net/discover/" target="_blank">rainmeter skins</a>
+            <a class="btn_lnk_1" href="https://www.deviantart.com/tag/theme" target="_blank">theme</a>
+            <a class="btn_lnk_1" href="https://www.deviantart.com/rainmeter/gallery/" target="_blank">rainmeter gallery</a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
             <a class="btn_lnk_1" href="" target="_blank"></a>
