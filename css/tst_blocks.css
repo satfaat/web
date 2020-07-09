@@ -1,11 +1,14 @@
+header, footer, section, aside, nav, div {
+	border-style: dotted;
+	border-color: red;
+}
+
 header {
-    border-style: dotted;
     padding: 12px;
 }
 
 /*.block_a {border-style: dotted;}*/
 div {
-    border-style: dotted;
     margin: 12px;
 }
 

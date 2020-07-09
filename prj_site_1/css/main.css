@@ -18,6 +18,11 @@
 }
 html {font-family: "Comic Sans MS", "Century Gothic", sans-serif;}
 
+header, footer, section, aside, nav, div {
+	border-style: dotted;
+	border-color: red;
+}
+
 body{
 	background: hsla(246, 73%, 10%, 0.8) url("../../img/bg/night_sky.jpg") no-repeat fixed center;
 	background-size: cover;
