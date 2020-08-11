@@ -74,3 +74,10 @@ var hrefP1 = "<a href =" + mt + wholeAddress + "> Пишите мне.</a>";
           updateHidden();
         }
       }
+    
+const h1 = document.querySelector('h1')
+
+const cssOM = window
+      .getComputedStyle(h1)
+      .getPropertyValue('font-size')
+console.log(cssOM)
