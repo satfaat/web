@@ -1,0 +1,34 @@
+<html><body>
+    
+    <p id="demo"></p>
+    <p id="invoke"></p>
+    <p id="json-dt"></p>
+
+    <h2>code web tools</h2>
+        <a id='lnk' class="btn_lnk_1 code_web_tools" href="#" target="_blank">discord</a>
+        <a class="btn_lnk_1" href="" target="_blank">dartpad</a>
+        <a class="btn_lnk_1" href="" target="_blank"></a>
+        <a class="btn_lnk_1" href="" target="_blank"></a>
+        <a class="btn_lnk_1" href="" target="_blank"></a>
+
+    <!-- <script type="text/javascript" src="dt.json"></script> -->
+    <!--<script type="text/javascript" src="script.js"></script>-->
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="run.js"></script>
+    <script>
+        document.getElementById("demo").innerHTML = "Hello World!";
+
+        //const fn = require("./dt.json");
+
+        (function () {
+            let x = "I will invoke myself";  // I will invoke myself
+            console.log(x);
+        })();
+        function myFunction() {
+            var x = location.href;
+            document.getElementById("demo").innerHTML = x;
+        }
+    </script>
+
+
+</body></html> 

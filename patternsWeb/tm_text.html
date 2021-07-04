@@ -1,0 +1,24 @@
+<input
+type="text"
+onselectstart="return false"
+oncut="return false"
+oncopy="return false"
+onpaste="return false"
+ondrag="return false"
+ondrop="return false"
+/>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('body').bind('cut copy paste', function(event) {
+            event.preventDefault();
+        });
+    });
+</script>
+<script type="text/javascript">
+    document.oncontextmenu = new Function("return false");
+</script>
+<script type="text/javascript">
+    $(document).bind("contextmenu",function(e){
+        return false;
+    });
+</script>
