@@ -8,7 +8,21 @@ const lnks = {
     "second": "search.com"
 };
 
-my_links = [
-    'https://discordapp.com/',
-    'https://dartpad.dev/'
+const my_links = [
+    /*'https://discordapp.com/',
+    'https://dartpad.dev/',
+    ["https://discordapp.com/", "discordapp"],*/
+    {
+        "link": "https://discordapp.com/",
+        "name": "discord"
+    },
+    {
+        "link": "https://dartpad.dev/",
+        "name": "dartpad"
+    }
 ]
+
+const it = {
+    "code": ["https://discordapp.com/", "discordapp"] 
+
+}
