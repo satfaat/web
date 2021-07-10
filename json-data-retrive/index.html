@@ -9,8 +9,8 @@
     </div>
 
     <h2>code web tools</h2>
-        <a id='lnk' class="btn_lnk_1 code_web_tools" href="#" target="_blank"></a>
-        <a class="btn_lnk_1 code_web_tools" href="" target="_blank">dartpad</a>
+        <a class="btn_lnk_1 code_web_tools" href="#" target="_blank"></a>
+        <a class="btn_lnk_1 code_web_tools" href="" target="_blank"></a>
         <a class="btn_lnk_1 code_web_tools" href="" target="_blank"></a>
         <a class="btn_lnk_1" href="" target="_blank"></a>
         <a class="btn_lnk_1" href="" target="_blank"></a>
@@ -33,6 +33,15 @@
             document.getElementById("demo").innerHTML = x;
         }
     </script>
+
+<script>
+    var a = document.createElement('a');
+    var linkText = document.createTextNode("my title text");
+    a.appendChild(linkText);
+    a.title = "my title text";
+    a.href = "http://example.com";
+    document.body.appendChild(a);
+</script>
 
 
 </body></html> 

@@ -3,16 +3,16 @@
 /* INCLUDE */ 
 var title = (document.body.id !="") ? title = document.body.id + " " + navigator.onLine : title = "No title ";
 
-var meta = [
+const meta = [
     '<meta charset="UTF-8">',
     '<meta name="viewport" content="width=device-width, initial-scale=1.0">'];
-var linkcss = [
+const linkcss = [
     "<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>",
     "<link rel='stylesheet' href='../../cssLib/remedy.css'/>",
     "<link rel='stylesheet' href='css/style.css'/>"];
-var linkjs = [    
+const linkjs = [    
     '<script src="js/site.js"></script>'];
-var linkjsLib = ['<script src="https://www.w3schools.com/lib/w3.js"></script>',
+const linkjsLib = ['<script src="https://www.w3schools.com/lib/w3.js"></script>',
                     '<script src="https://cdn.jsdelivr.net/npm/vue"></script>',
                     '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>',
                     '<noscript>You need to enable JavaScript to view the full site.</noscript>',
@@ -29,7 +29,7 @@ function addToFooter(linkjs){
 }; document.getElementById("htmFooter").insertAdjacentHTML('beforeend', addToFooter(linkjs));
 
 function includeHTML() {
-    var z, i, elmnt, file, xhttp;
+    let z, i, elmnt, file, xhttp;
 
 /*loop through a collection of all HTML elements:*/
     z = document.getElementsByTagName("*");
@@ -104,4 +104,5 @@ function open_tab(evt, tab_name) {
     function closeNav() {
         document.getElementById("nav-overlay").style.height = "0%";
         console.log("clicked to close");
-    } 
+    }
+
