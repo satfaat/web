@@ -12,7 +12,12 @@
         let some_txt = "my paragraph";
         let about_me = "my name is Faat";
 
-        tag_p("do i lucky - ", "sales")
+        if (window['localStorage']){
+            localStorage.setItem('sticky_0', 'my name\'s Faat');
+            let sticky = localStorage.getItem('sticky_0');
+            alert(sticky);  
+        }
+              
 
         function tag_p(some_text, set_selector = null){
             const text_input = document.createTextNode(some_text);
@@ -43,6 +48,7 @@
         // Start
         tag_p(some_txt);
         tag_p(about_me);
+        tag_p("do i lucky - ", "sales")
         
             
     </script></body></html>
