@@ -2,12 +2,29 @@
     <head>
         <meta charset='UTF-8'>
         <title>build html with js</title>
+        <link rel="stylesheet" href="../css/notetoself.css">
     </head>
     
 <body>
+    <form>
+        <input type = "text" id = "note_text">
+        <input type = "button" id ="add_button" value="Add sticky note to self"
+    </form>
 
+    <ul id="stickies"></ul>
 
     <script>
+        // Start
+        window.onload = init;
+
+        function init() {
+	        tag_p(some_txt);
+            tag_p(about_me);
+            tag_p("do i lucky - ", "sales");
+            addSticky();
+        }
+        
+
         // move to data
         let some_txt = "my paragraph";
         let about_me = "my name is Faat";
@@ -15,7 +32,7 @@
         if (window['localStorage']){
             localStorage.setItem('sticky_0', 'my name\'s Faat');
             let sticky = localStorage.getItem('sticky_0');
-            alert(sticky);  
+            //alert(sticky);  
         }
               
 
@@ -27,7 +44,7 @@
             p.setAttribute("id", set_selector);
         }
 
-        window.onload = function(){
+        function test_1(){
             const url = "http://localhost/sales.json";
             // http://wickedlysmart.com/ifeelluckytoday
             let request = new XMLHttpRequest();
@@ -45,10 +62,104 @@
             p.innerHTML = "today U R " + luck;
         }
 
-        // Start
-        tag_p(some_txt);
-        tag_p(about_me);
-        tag_p("do i lucky - ", "sales")
+
+        // notetoself
+
+        function addSticky_1(){
+            let button = document.getElementById('add_button');
+            button.onclick = createSticky;
+
+            for (let i=0; i<localStorage.length; i++){
+                let key = localStorage.key(i);
+                if (key.substring(0, 6) == 'sticky'){
+                    let value = localStorage.getItem(key);
+                    addStickyToDOM(value);
+                }
+            }
+        }
+
+
+        function addSticky(){
+            let button = document.querySelector('#add_button');
+            button.onclick = createSticky;
+
+            let stickiesArray = getStickiesArray(); //arr
+            for (let index in stickiesArray){ // 0-11
+                let key = stickiesArray[index];
+                let value = localStorage[key];
+                addStickyToDOM(key, value);
+            }
+        }
         
-            
+
+        function addStickyToDOM(key, value) {
+	        let stickies = document.querySelector("#stickies");
+	        let sticky = document.createElement("li");
+            sticky.setAttribute("id", key);
+
+	        let span = document.createElement("span");
+	        span.setAttribute("class", "sticky");
+	        span.innerHTML = value;
+	        sticky.appendChild(span);
+	        stickies.appendChild(sticky);
+
+            // delete by id
+            sticky.onclick = deleteSticky;
+        }
+
+        function createSticky_1() {
+	        let value = document.getElementById("note_text").value;
+            // document.querySelector('#note_text').innerText;
+	        let key = "sticky_" + localStorage.length;
+	        localStorage.setItem(key, value);
+	
+	        addStickyToDOM(value);
+        }
+
+        function createSticky() {
+	        let stickiesArray = getStickiesArray();
+	        let currentDate = new Date();
+	        let key = "sticky_" + currentDate.getTime();
+	        let value = document.querySelector("#note_text").value;
+
+	        localStorage.setItem(key, value);
+	        stickiesArray.push(key);
+	        localStorage.setItem("stickiesArray", JSON.stringify(stickiesArray));
+	
+	        addStickyToDOM(key, value);
+        }
+
+        function getStickiesArray() {
+	        let stickiesArray = localStorage.getItem("stickiesArray");
+	        if (!stickiesArray) {
+		        stickiesArray = [];
+		        localStorage.setItem("stickiesArray", JSON.stringify(stickiesArray));
+	        } else {
+		        stickiesArray = JSON.parse(stickiesArray);
+	        }
+	        return stickiesArray;
+        }
+
+        function deleteSticky(e) {
+	        let key = e.target.id;
+	        if (e.target.tagName.toLowerCase() == "span") {
+		        key = e.target.parentNode.id;
+	        }
+	        let stickiesArray = getStickiesArray();
+	        if (stickiesArray) {
+                for (let index in stickiesArray){
+                    if (key == stickiesArray[index]){
+                        stickiesArray.splice(index,1);
+                    }
+                }
+		        localStorage.removeItem(key);
+		        localStorage.setItem("stickiesArray", JSON.stringify(stickiesArray));
+		        removeStickyFromDOM(key);
+	        }
+        }
+
+        function removeStickyFromDOM(key) {
+	        let sticky = document.querySelector('#'+key);
+	        sticky.parentNode.removeChild(sticky);
+        }
     </script></body></html>
