@@ -29,3 +29,16 @@ deno run https://deno.land/std/examples/welcome.ts
 #### backend
 - [deno](https://deno.land/)
 - [manual](https://deno.land/manual)
+
+
+## Remix
+
+- [remix](https://remix.run/)
+- [remix-blog](https://remix.run/docs/en/v1/tutorials/blog)
+
+### start-remix
+```bash
+npx create-remix@latest
+cd project_destination
+npm run dev
+```
