@@ -7,9 +7,14 @@ import {
   Scripts,
   ScrollRestoration
 } from "remix";
+import styles from "~/styles/global.css";
 
 export function meta() {
   return { title: "New Remix App" };
+}
+
+export function links() {
+  return [{ rel: "stylesheet", href: styles }];
 }
 
 export default function App() {
@@ -18,6 +23,7 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+
         <Meta />
         <Links />
       </head>
