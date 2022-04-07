@@ -1,3 +1,6 @@
+# my folders and files
+package-lock.json
+
 node_modules
 
 /.cache
