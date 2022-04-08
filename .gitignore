@@ -2,6 +2,8 @@
 db/
 .db/
 media/
+dt.media/
+img_ign/
 
 
 # Logs
@@ -65,6 +67,3 @@ typings/
 
 # next.js build output
 .next
-
-#folders
-img_ign/
