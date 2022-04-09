@@ -17,28 +17,29 @@
     <!--<script type="text/javascript" src="script.js"></script>-->
     <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="run.js"></script>
-    <script>
-        document.getElementById("demo").innerHTML = "Hello World!";
-
-        //const fn = require("./dt.json");
-
-        (function () {
-            let x = "I will invoke myself";  // I will invoke myself
-            console.log(x);
-        })();
-        function myFunction() {
-            var x = location.href;
-            document.getElementById("demo").innerHTML = x;
-        }
-    </script>
 
 <script>
-    var a = document.createElement('a');
-    var linkText = document.createTextNode("my title text");
-    a.appendChild(linkText);
-    a.title = "my title text";
-    a.href = "http://example.com";
-    document.body.appendChild(a);
+    document.getElementById("demo").innerHTML = "Hello World!";
+
+    //const fn = require("./dt.json");
+
+    (function () {
+        let x = "I will invoke myself";  // I will invoke myself
+        console.log(x);
+    })();
+    function myFunction() {
+        var x = location.href;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script>
+
+<script>
+    var tag_a = document.createElement('a');
+    var linkedText = document.createTextNode("my title text");
+    tag_a.appendChild(linkedText);
+    tag_a.title = "my title text";
+    tag_a.href = "http://example.com";
+    document.body.appendChild(tag_a);
 </script>
 
 
