@@ -1,12 +1,24 @@
+<style>
+    body { 
+        background-color: hsl(250, 50%, 5%);
+        color: hwb(177 90% 0%);
+    }
+</style>
+
 ## CSS
 - [attribute_selectors](https://www.w3schools.com/css/css_attribute_selectors.asp)
 
 
 ## JS
-### IDE:
-		shift + F4 # Scratchpad
-		Ctrl+Shift+j
-        Ctrl+Shift+I
+<details>
+<summary><h3>IDE:</h3></summary>
+
+- shift + F4 # Scratchpad
+- Ctrl+Shift+j
+- Ctrl+Shift+I
+
+</details>
+
 ### Deno
 #### installation
 by default C:\Users\user_name\.deno

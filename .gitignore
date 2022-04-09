@@ -3,7 +3,9 @@ db/
 .db/
 media/
 dt.media/
+lib.media/
 img_ign/
+moon/
 
 
 # Logs
