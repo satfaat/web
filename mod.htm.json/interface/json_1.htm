@@ -1,9 +1,71 @@
-<!DOCTYPE html><html><body>
+<!DOCTYPE html><html><head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
 
-<div id="id01"></div>
+<body>
+
+    <div id="id01"></div>
+
+    <script>
+
+        /*$(function () {
+            var people = [];
+
+            $.getJSON('people.json', function (data) {
+                $.each(data.person, function (key, val) {
+                    var tblRow = "<tr>" + "<td>" + val.firstName + "</td>" +
+                        "<td>" + val.lastName + "</td>" + "<td>" + val.job + "</td>" + "<td>" + val.roll + "</td>" + "</tr>"
+                    $(tblRow).appendTo("#userdata tbody");
+                });
+
+            });
+
+        });*/
+    </script>
+
+        <div class="wrapper">
+            <div class="profile">
+                <table id="userdata" border="2">
+                    <thead>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email Address</th>
+                        <th>City</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div id="js_1"></div>>
 
 
-<script src="../js/json.js"></script>
-<script src="../dt.js/dt_links.js"></script>
+        <script>
+            let date_now = new Date();
+            let id_other = 6892357;
+
+            ex_1 = {
+                "date_order": date_now,
+                "oeder": "soup",
+                "strings": [
+                    'String(id_other).length '
+                ]
+            }
+
+            console.log('ex_1');
+            console.log(ex_1);
+            document.getElementById("js_1").innerHTML = ex_1;
+
+            d3.json('dt.js/ex.json', function(res){console.log(res)});
+
+        </script>
+
+        <script type="module" src="../method/other.js"></script>
+        <script src="../method/dt_links.js"></script>
+        <script type="application/json" src="../dt.js/ex.json"></script>
 
 </body></html>
