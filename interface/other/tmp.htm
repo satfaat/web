@@ -1,0 +1,199 @@
+<!doctype html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Home Page</title>
+
+<link rel="stylesheet" href="style.css" />
+
+<script>
+    /**
+ * Returns a string that represents the name of the current moment of the day,
+ * which can be:
+ *   + 'day' (from 0 hour to 12 hours);
+ *   + 'afternoon' (from 12 hours to 18 hours); or
+ *   + 'night' (from 18 hours until 24 hours).
+ *
+ * This result may be interpreted by other functions.
+ *
+ * @param {Date} currentMoment an instance of the Date object containing
+ * information about the current moment of the day.
+ *
+ * @returns {string} A string that represents the name of the current moment of
+ * the day.
+ */
+function getCurrentMomentName(currentMoment) {
+  /** The maximum hour that is considered day time. */
+  const dayTimeHourLimit = 12;
+  /** The maximum hour that is considered afternoon time. */
+  const afternoonTimeHourLimit = 18;
+  const currentHours = currentMoment.getHours();
+
+  if (currentHours < dayTimeHourLimit) {
+    return 'morning';
+  } else if (currentHours < afternoonTimeHourLimit) {
+    return 'afternoon';
+  } else {
+    return 'night';
+  }
+}
+
+/**
+ * Updates the background image based on the current moment of the day.
+ *
+ * @param {Date} currentMoment an instance of the Date object containing
+ * information about the current moment of the day.
+ */
+function updateBackgroundImage(currentMoment) {
+  const currentMomentName = getCurrentMomentName(currentMoment);
+  const $backgroundImage = document.querySelector('.js-background-image');
+  let backgroundImageSource;
+
+  if (currentMomentName === 'morning') {
+    backgroundImageSource = 'https://images.unsplash.com/photo-1615915613340-17\
+e548756e88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&aut\
+o=format&fit=crop&w=2000&q=80';
+  } else if (currentMomentName === 'afternoon') {
+    backgroundImageSource = 'https://images.unsplash.com/photo-1609603155589-0c\
+752cbc3a53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&aut\
+o=format&fit=crop&w=1632&q=80';
+  } else {
+    backgroundImageSource = 'https://images.unsplash.com/photo-1504493408076-20\
+17927bbb1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&aut\
+o=format&fit=crop&w=1470&q=80';
+  }
+
+  $backgroundImage.src = backgroundImageSource;
+}
+
+/**
+ * Updates the greeting message based on the current moment of the day.
+ *
+ * @param {Date} currentMoment an instance of the Date object containing
+ * information about the current moment of the day.
+ */
+function updateGreetingMessage(currentMoment) {
+  const currentMomentName = getCurrentMomentName(currentMoment);
+  const $greetingMessage = document.querySelector('.js-greeting-message');
+  let greetingMessage;
+
+  if (currentMomentName === 'morning') {
+    greetingMessage = 'Good morning!';
+  } else if (currentMomentName === 'afternoon') {
+    greetingMessage = 'Good afternoon!';
+  } else {
+    greetingMessage = 'Good night!';
+  }
+
+  $greetingMessage.innerText = greetingMessage;
+}
+
+/**
+ * Updates the clock based on the current moment of the day.
+ *
+ * @param {Date} currentMoment an instance of the Date object containing
+ * information about the current moment of the day.
+ */
+function updateClock(currentMoment) {
+  const timeFormatter = Intl.DateTimeFormat('en-us', {
+    dateStyle: 'medium',
+    timeStyle: 'medium',
+  });
+  const $clock = document.querySelector('.js-clock');
+
+  $clock.innerText = timeFormatter.format(currentMoment);
+}
+
+/**
+ * Updates the background image, greeting message and clock based on the current
+ * moment of the day.
+ *
+ * This function will be calling itself over again after each second to update
+ * the elements constantly.
+ */
+function updateInterface() {
+  const oneSecondInMiliseconds = 1000;
+  const currentMoment = new Date();
+
+  updateBackgroundImage(currentMoment);
+  updateGreetingMessage(currentMoment);
+  updateClock(currentMoment);
+
+  setTimeout(() => {
+    updateInterface();
+  }, oneSecondInMiliseconds);
+}
+
+updateInterface();
+</script>
+
+<script src="script.js" defer></script>
+
+<style>
+    /**
+ * Import of the 'Almarai' font from Google Fonts.
+ * The weights 400 and 700 are available with normal and italics variants.
+ *
+ * More information: https://fonts.google.com/specimen/Almarai.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap');
+
+:root {
+  --color-transparent-black: hsl(0, 0%, 0%, 50%);
+}
+
+:root {
+  font-size: clamp(12px, 2vw, 16px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Almarai', 'sans-serif';
+}
+
+.background-image {
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.text-contents {
+  backdrop-filter: blur(5px);
+  background: var(--color-transparent-black);
+  border-radius: 20px;
+  color: white;
+  left: 50%;
+  padding: 2rem;
+  position: absolute;
+  text-align: center;
+  top: 60%;
+  translate: -50%;
+}
+
+.greeting-message {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.clock {
+  font-size: 2rem;
+}
+</style>
+
+<img class="js-background-image background-image" href="" src="" />
+
+<main class="text-contents">
+  <p class="js-greeting-message greeting-message"></p>
+  <p class="js-clock clock"></p>
+</main>
+
+<footer>
+  <p>Sherman Rofeman © MIT License</p>
+  <a href="https://github.com/f1redr4g0n/home_page">
+    View the source code in the GitHub
+  </a>
+</footer>
