@@ -1,0 +1,3 @@
+- https://www.solidjs.com/guides/getting-started
+- https://docs.solidjs.com/guides/tutorials/getting-started-with-solid/welcome
+- https://stackblitz.com/github/solidjs/templates/tree/master/js?file=README.md
