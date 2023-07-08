@@ -1,14 +1,12 @@
 import { Application, Router } from "https://deno.land/x/oak@v12.5.0/mod.ts";
 import { oakCors } from "https://deno.land/x/cors@v1.2.2/mod.ts";
 import logger from "https://deno.land/x/oak_logger/mod.ts";
-import { AllDino, GetDino, Greeting } from "./controllers.ts";
+import { GetTasks } from "./controllers.ts";
 
 const router = new Router();
 
 router
-  .get("/", Greeting)
-  .get("/api", AllDino)
-  .get("/api/:dinosaur", GetDino);
+  .get("/tasks", GetTasks);
 
 const app = new Application();
 app.use(oakCors()); // Enable CORS for All Routes

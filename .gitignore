@@ -1,11 +1,12 @@
 # my folders
-db/
-.db/
+
 media/
 dt.media/
 lib.media/
 img_ign/
 moon/
+.vite/
+deno.lock
 
 
 # Logs

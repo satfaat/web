@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first Vue page</title>
+    <style>
+        #vue1 {
+            display: inline-block;
+            padding: 10px;
+            font-size: x-large;
+            background-color: lightgreen;
+        }
+
+        div {
+            margin: 10px;
+            padding: 10px;
+            border: solid black 1px;
+            display: inline-block;
+        }
+
+        .pinkBG {
+            background-color: lightpink;
+        }
+
+        #vue3 {
+            border: dashed black 1px;
+            width: 250px;
+            padding: 0 10px 10px 10px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #vue4>div {
+            width: 200px;
+            padding: 20px;
+            border: dashed black 1px;
+            background-color: lightcoral;
+        }
+
+        #vue5 {
+            border: dashed black 1px;
+            width: 160px;
+            padding: 0 20px;
+            font-weight: bold;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <iframe src="https://translate.google.com/" name="google translate" title="google translate" width="100%"
+        height="600" style="border:none;">
+    </iframe>
+
+    <iframe src="https://translate.yandex.ru/" name="yandex translate" title="yandex translate" width="100%"
+        height="600" style="border:none;">
+    </iframe>
+
+    <h1>Vue Example</h1>
+
+    <p>The message is taken from 'data' inside the Vue instance by writing {{ message }} inside the div with id="app".
+    </p>
+
+    <div id="vue1">
+        {{ message }}
+        {{'Random number: ' + Math.ceil(Math.random()*6) }}
+    </div>
+
+    <div id="vue2">
+        <p>Everything inside the div emelent with id="app" can use data from the Vue instance.</p>
+        <div v-bind:class="vueClass">This element is bound to the "pinkBG" class.</div>
+    </div>
+
+    <h2>'v-bind' Image Source Example</h2>
+
+    <div id="vue3">
+        <p>The browser finds the 'src' attribute value from the Vue instance with the use of 'v-bind'.</p>
+        <img v-bind:src="url">
+    </div>
+
+    <h2>'v-bind' Font Size Example</h2>
+
+    <p>The browser sets the font-size based on the value of 'size' in the Vue instance.</p>
+
+    <div id="vue4">
+        <div v-bind:style="{ fontSize: size + 'px' }">Text example</div>
+    </div>
+
+
+    <h2>Example with text check</h2>
+
+    <p>In this example 'v-if' uses a method 'includes()' instead of a comparison operator.</p>
+
+    <p>Remove 'pizza' from the 'text' property inside the Vue instance, click 'Run' and see what happens.</p>
+
+    <div id="vue5">
+        <p v-if="text.includes('pizza')">The text includes the word 'pizza'</p>
+        <p v-else>The word 'pizza' is not found in the text</p>
+    </div>
+
+    <h2>'template' Example</h2>
+
+    <p>All HTML code from inside the div tag with id="app" is moved inside the 'template' configuration option, in
+        backtick quotes.</p>
+
+    <div id="vue6"></div>
+
+
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const vue1 = Vue.createApp({
+            data() {
+                return {
+                    message: "Hello World!"
+                }
+            }
+        })
+
+        vue1.mount('#vue1')
+
+        const vue2 = Vue.createApp({
+            data() {
+                return {
+                    vueClass: "pinkBG"
+                }
+            }
+        })
+
+        vue2.mount('#vue2')
+
+        const vue3 = Vue.createApp({
+            data() {
+                return {
+                    url: "img_beach3.jpg"
+                }
+            }
+        })
+        app.mount('#vue3')
+
+        const vue4 = Vue.createApp({
+            data() {
+                return {
+                    size: 28
+                }
+            }
+        })
+        app.mount('#vue4')
+
+        const vue5 = Vue.createApp({
+            data() {
+                return {
+                    text: 'I like taco, pizza, Thai beef salad, pho soup and tagine.'
+                }
+            }
+        })
+        app.mount('#vue5')
+
+        const vue6 = Vue.createApp({
+            template:
+                `<h1>{{ message }}</h1>
+    <p>This is a second line of HTML code, inside backtick quotes</p>`,
+            data() {
+                return {
+                    message: "Hello World!"
+                }
+            }
+        })
+
+        app.mount('#vue6')
+
+    </script>
+
+</body>
+
+</html>
